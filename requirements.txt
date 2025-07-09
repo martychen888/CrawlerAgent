@@ -1,0 +1,13 @@
+
+requests
+beautifulsoup4
+lxml
+gradio
+langchain
+openai
+selenium
+playwright
+fake-useragent
+cryptography
+pytest
+validators
