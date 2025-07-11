@@ -1,0 +1,453 @@
+2025-07-11 14:53:56,794 | DEBUG | close.started
+2025-07-11 14:53:56,794 | DEBUG | close.complete
+2025-07-11 14:54:11,804 | DEBUG | Using proactor: IocpProactor
+2025-07-11 14:54:11,835 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 14:54:12,174 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-11 14:54:12,402 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EED6706AD0>
+2025-07-11 14:54:12,402 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001EED65BD130> server_hostname='api.gradio.app' timeout=3
+2025-07-11 14:54:12,424 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-11 14:54:12,431 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-11 14:54:12,433 | DEBUG | interactive is False
+2025-07-11 14:54:12,433 | DEBUG | platform is win32
+2025-07-11 14:54:12,500 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-11 14:54:12,502 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-11 14:54:12,526 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-11 14:54:12,697 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EED6748390>
+2025-07-11 14:54:12,697 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 14:54:12,699 | DEBUG | send_request_headers.complete
+2025-07-11 14:54:12,699 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 14:54:12,699 | DEBUG | send_request_body.complete
+2025-07-11 14:54:12,699 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 14:54:12,858 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 02:57:44 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-11 14:54:12,874 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-11 14:54:12,889 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 14:54:12,889 | DEBUG | receive_response_body.complete
+2025-07-11 14:54:12,889 | DEBUG | response_closed.started
+2025-07-11 14:54:12,889 | DEBUG | response_closed.complete
+2025-07-11 14:54:12,904 | DEBUG | close.started
+2025-07-11 14:54:12,905 | DEBUG | close.complete
+2025-07-11 14:54:13,078 | DEBUG | Using proactor: IocpProactor
+2025-07-11 14:54:13,404 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-11 14:54:13,405 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EED674C6D0>
+2025-07-11 14:54:13,405 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 14:54:13,407 | DEBUG | send_request_headers.complete
+2025-07-11 14:54:13,407 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 14:54:13,407 | DEBUG | send_request_body.complete
+2025-07-11 14:54:13,407 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 14:54:13,408 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 02:54:13 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-11 14:54:13,408 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-11 14:54:13,408 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 14:54:13,408 | DEBUG | receive_response_body.complete
+2025-07-11 14:54:13,408 | DEBUG | response_closed.started
+2025-07-11 14:54:13,408 | DEBUG | response_closed.complete
+2025-07-11 14:54:13,409 | DEBUG | close.started
+2025-07-11 14:54:13,409 | DEBUG | close.complete
+2025-07-11 14:54:13,410 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-11 14:54:13,411 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EED674EE50>
+2025-07-11 14:54:13,411 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-11 14:54:13,411 | DEBUG | send_request_headers.complete
+2025-07-11 14:54:13,412 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-11 14:54:13,412 | DEBUG | send_request_body.complete
+2025-07-11 14:54:13,412 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-11 14:54:13,429 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 02:54:13 GMT'), (b'server', b'uvicorn'), (b'content-length', b'42461'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-11 14:54:13,430 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-11 14:54:13,430 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-11 14:54:13,430 | DEBUG | receive_response_body.complete
+2025-07-11 14:54:13,430 | DEBUG | response_closed.started
+2025-07-11 14:54:13,430 | DEBUG | response_closed.complete
+2025-07-11 14:54:13,431 | DEBUG | close.started
+2025-07-11 14:54:13,431 | DEBUG | close.complete
+2025-07-11 14:54:13,434 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 14:54:13,999 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-11 14:54:36,829 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:54:36,830 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:54:36,832 | DEBUG | Using proactor: IocpProactor
+2025-07-11 14:54:38,157 | INFO | No LOGIN_URL provided, skipping login.
+2025-07-11 14:55:03,001 | WARNING | Timeout waiting for JS content: div.dynamic-section
+2025-07-11 14:55:06,083 | DEBUG | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-bdf34fdf-7893-40de-abad-32d83aac6d5e', 'json_data': {'messages': [{'content': 'Below is a list of property listing descriptions.\n\nExtract the following fields from each:\n- Title (or address)\n- Price (sale or rent)\n- Number of Bedrooms\n- Number of Bathrooms\n- Location\n- Listing URL (if available)\n\nFormat the result as a CSV table with the following columns:\nTitle,Price,Beds,Baths,Location,URL\n\nGet to know City Centre | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As of Jun-25, medium-sized houses (3-4 bedrooms) in City Centre are listed for $1,210,500 on average, a change of 3% compared to the previous three months. Year on year, the average listing price for medium-sized homes in City Centre has actually decreased by 17%, up from a value of $1,463,300. | Meanwhile, the average sales price for small houses (1-2 bedrooms) in City Centre is $431,150. This represents a change of 2% versus the last three months ($438,900). Compared to last year, small properties in City Centre have seen a 1% fall from $435,500. | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As o... | Show all | More about this data\nWant more insights? | Research suburbs and browse sold property details.\nTrack your home¡¯s value | Get fortnightly updates when your HomesEstimate is refreshed.\nRecent sales nearby | Sold Jun 2025 | $173,000 | 1 | 1 | 210/11 Union Street, Auckland Central, Auckland | May Ma | Sold May 2025 | $350,000 | 2 | 1 | 1424/430 Queen Street, Auckland Central, Auckland | Lisa Hui | Sold Apr 2025 | $410,000 | 2 | 1 | 710/188 Hobson Street, Auckland Central, Auckland | Selina Zheng | View more\nPrivate listing | Direct Sale ¨C No Agents, Talk to the Owner! | City Centre, Auckland City | 2 | 1 | Asking price $350,000', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2025-07-11 14:55:06,107 | DEBUG | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-07-11 14:55:06,108 | DEBUG | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-07-11 14:55:06,125 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EEDBA39750>
+2025-07-11 14:55:06,125 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001EEDC299C70> server_hostname='api.openai.com' timeout=None
+2025-07-11 14:55:06,133 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EED8F779D0>
+2025-07-11 14:55:06,133 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-07-11 14:55:06,134 | DEBUG | send_request_headers.complete
+2025-07-11 14:55:06,134 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-07-11 14:55:06,134 | DEBUG | send_request_body.complete
+2025-07-11 14:55:06,134 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-07-11 14:55:09,507 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 02:58:40 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-tnjpviqxybklvyhygs429u6c'), (b'openai-processing-ms', b'2210'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'2213'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199530'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'141ms'), (b'x-request-id', b'req_1a72722ee42a832e81bb487a0baae68a'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=TGurGfs37pTTVOFNWbvpRv3xLehYu5l0gmL4ciwoIKE-1752202720-1.0.1.1-goTotxx.p5zggYL3yz01gbw9O7ETCkHh0AqliPsZdNIgHA1EwVwRAKXJD55CNYfRgrbsH64Qz6gTx9Bwww78s4IP5pZSkVx7xlRXtjGA3tc; path=/; expires=Fri, 11-Jul-25 03:28:40 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=4MpdGV1P7PCjMwPPgUjlXqIAo.XPODbZnBVjeV.pHa8-1752202720913-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95d50a48ad0a1c5d-AKL'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-11 14:55:09,509 | INFO | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-11 14:55:09,509 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-07-11 14:55:09,509 | DEBUG | receive_response_body.complete
+2025-07-11 14:55:09,510 | DEBUG | response_closed.started
+2025-07-11 14:55:09,510 | DEBUG | response_closed.complete
+2025-07-11 14:55:09,510 | DEBUG | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Fri, 11 Jul 2025 02:58:40 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-tnjpviqxybklvyhygs429u6c'), ('openai-processing-ms', '2210'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '2213'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199530'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '141ms'), ('x-request-id', 'req_1a72722ee42a832e81bb487a0baae68a'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=TGurGfs37pTTVOFNWbvpRv3xLehYu5l0gmL4ciwoIKE-1752202720-1.0.1.1-goTotxx.p5zggYL3yz01gbw9O7ETCkHh0AqliPsZdNIgHA1EwVwRAKXJD55CNYfRgrbsH64Qz6gTx9Bwww78s4IP5pZSkVx7xlRXtjGA3tc; path=/; expires=Fri, 11-Jul-25 03:28:40 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=4MpdGV1P7PCjMwPPgUjlXqIAo.XPODbZnBVjeV.pHa8-1752202720913-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '95d50a48ad0a1c5d-AKL'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-07-11 14:55:09,510 | DEBUG | request_id: req_1a72722ee42a832e81bb487a0baae68a
+2025-07-11 14:55:09,550 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:55:09,551 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:55:09,554 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:55:37,328 | DEBUG | close.started
+2025-07-11 14:55:37,328 | DEBUG | close.complete
+2025-07-11 14:58:35,549 | DEBUG | Using proactor: IocpProactor
+2025-07-11 14:58:35,549 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 14:58:35,932 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-11 14:58:36,168 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019142B55650>
+2025-07-11 14:58:36,168 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019140CB10A0> server_hostname='api.gradio.app' timeout=3
+2025-07-11 14:58:36,180 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-11 14:58:36,200 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-11 14:58:36,201 | DEBUG | interactive is False
+2025-07-11 14:58:36,201 | DEBUG | platform is win32
+2025-07-11 14:58:36,262 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-11 14:58:36,262 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-11 14:58:36,262 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-11 14:58:36,505 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019142EE27D0>
+2025-07-11 14:58:36,505 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 14:58:36,506 | DEBUG | send_request_headers.complete
+2025-07-11 14:58:36,506 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 14:58:36,506 | DEBUG | send_request_body.complete
+2025-07-11 14:58:36,506 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 14:58:36,663 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 03:02:07 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-11 14:58:36,664 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-11 14:58:36,664 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 14:58:36,664 | DEBUG | receive_response_body.complete
+2025-07-11 14:58:36,664 | DEBUG | response_closed.started
+2025-07-11 14:58:36,746 | DEBUG | response_closed.complete
+2025-07-11 14:58:36,746 | DEBUG | close.started
+2025-07-11 14:58:36,767 | DEBUG | close.complete
+2025-07-11 14:58:36,834 | DEBUG | Using proactor: IocpProactor
+2025-07-11 14:58:37,151 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-11 14:58:37,151 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019144DE61D0>
+2025-07-11 14:58:37,151 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 14:58:37,152 | DEBUG | send_request_headers.complete
+2025-07-11 14:58:37,152 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 14:58:37,152 | DEBUG | send_request_body.complete
+2025-07-11 14:58:37,152 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 14:58:37,154 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 02:58:36 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-11 14:58:37,154 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-11 14:58:37,154 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 14:58:37,154 | DEBUG | receive_response_body.complete
+2025-07-11 14:58:37,154 | DEBUG | response_closed.started
+2025-07-11 14:58:37,154 | DEBUG | response_closed.complete
+2025-07-11 14:58:37,154 | DEBUG | close.started
+2025-07-11 14:58:37,155 | DEBUG | close.complete
+2025-07-11 14:58:37,156 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-11 14:58:37,156 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019140DC9810>
+2025-07-11 14:58:37,157 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-11 14:58:37,157 | DEBUG | send_request_headers.complete
+2025-07-11 14:58:37,157 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-11 14:58:37,157 | DEBUG | send_request_body.complete
+2025-07-11 14:58:37,158 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-11 14:58:37,173 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 02:58:36 GMT'), (b'server', b'uvicorn'), (b'content-length', b'41593'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-11 14:58:37,174 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-11 14:58:37,174 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-11 14:58:37,174 | DEBUG | receive_response_body.complete
+2025-07-11 14:58:37,174 | DEBUG | response_closed.started
+2025-07-11 14:58:37,174 | DEBUG | response_closed.complete
+2025-07-11 14:58:37,174 | DEBUG | close.started
+2025-07-11 14:58:37,174 | DEBUG | close.complete
+2025-07-11 14:58:37,178 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 14:58:37,741 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-11 14:59:00,230 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:59:00,230 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:59:00,230 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:59:07,367 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:59:07,372 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:59:08,806 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:59:08,811 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:59:10,310 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:59:10,315 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 14:59:12,552 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 14:59:12,558 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:01:20,515 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:01:20,520 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:02:11,132 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:02:11,132 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:02:12,881 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:02:12,888 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:03:41,447 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:03:41,451 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:08:05,333 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:08:05,364 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:08:05,692 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-11 15:08:05,943 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000191984D9D90>
+2025-07-11 15:08:05,943 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000019196DAD0A0> server_hostname='api.gradio.app' timeout=3
+2025-07-11 15:08:05,981 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-11 15:08:05,988 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:08:05,989 | DEBUG | interactive is False
+2025-07-11 15:08:05,990 | DEBUG | platform is win32
+2025-07-11 15:08:06,046 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-11 15:08:06,061 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:08:06,063 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-11 15:08:06,255 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019198C8F6D0>
+2025-07-11 15:08:06,255 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:08:06,255 | DEBUG | send_request_headers.complete
+2025-07-11 15:08:06,256 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:08:06,256 | DEBUG | send_request_body.complete
+2025-07-11 15:08:06,256 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:08:06,410 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 03:11:37 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-11 15:08:06,411 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-11 15:08:06,411 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:08:06,411 | DEBUG | receive_response_body.complete
+2025-07-11 15:08:06,411 | DEBUG | response_closed.started
+2025-07-11 15:08:06,431 | DEBUG | response_closed.complete
+2025-07-11 15:08:06,447 | DEBUG | close.started
+2025-07-11 15:08:06,463 | DEBUG | close.complete
+2025-07-11 15:08:06,652 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:08:06,980 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-11 15:08:06,981 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000191996C7850>
+2025-07-11 15:08:06,981 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:08:06,982 | DEBUG | send_request_headers.complete
+2025-07-11 15:08:06,983 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:08:06,983 | DEBUG | send_request_body.complete
+2025-07-11 15:08:06,984 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:08:06,984 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:08:06 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-11 15:08:06,984 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-11 15:08:06,984 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:08:06,984 | DEBUG | receive_response_body.complete
+2025-07-11 15:08:06,984 | DEBUG | response_closed.started
+2025-07-11 15:08:06,985 | DEBUG | response_closed.complete
+2025-07-11 15:08:06,985 | DEBUG | close.started
+2025-07-11 15:08:06,985 | DEBUG | close.complete
+2025-07-11 15:08:06,986 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-11 15:08:06,987 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000019196F21D10>
+2025-07-11 15:08:06,987 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:08:06,987 | DEBUG | send_request_headers.complete
+2025-07-11 15:08:06,988 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-11 15:08:06,988 | DEBUG | send_request_body.complete
+2025-07-11 15:08:06,988 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:08:07,004 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:08:06 GMT'), (b'server', b'uvicorn'), (b'content-length', b'41864'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-11 15:08:07,005 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-11 15:08:07,005 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-11 15:08:07,005 | DEBUG | receive_response_body.complete
+2025-07-11 15:08:07,005 | DEBUG | response_closed.started
+2025-07-11 15:08:07,005 | DEBUG | response_closed.complete
+2025-07-11 15:08:07,005 | DEBUG | close.started
+2025-07-11 15:08:07,005 | DEBUG | close.complete
+2025-07-11 15:08:07,009 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:08:07,560 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-11 15:08:15,906 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:08:15,907 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:08:15,912 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:08:24,454 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:08:24,457 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:08:26,106 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:08:26,111 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:08:28,738 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:08:28,742 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:14:17,955 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:14:18,024 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:14:18,393 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-11 15:14:18,576 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-11 15:14:18,583 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:14:18,585 | DEBUG | interactive is False
+2025-07-11 15:14:18,585 | DEBUG | platform is win32
+2025-07-11 15:14:18,639 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ABEA250E10>
+2025-07-11 15:14:18,639 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001ABEA0B5010> server_hostname='api.gradio.app' timeout=3
+2025-07-11 15:14:18,654 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:14:18,656 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-11 15:14:18,757 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-11 15:14:18,974 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ABEA218310>
+2025-07-11 15:14:18,990 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:14:19,001 | DEBUG | send_request_headers.complete
+2025-07-11 15:14:19,006 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:14:19,022 | DEBUG | send_request_body.complete
+2025-07-11 15:14:19,038 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:14:19,165 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 03:17:50 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-11 15:14:19,166 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-11 15:14:19,181 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:14:19,181 | DEBUG | receive_response_body.complete
+2025-07-11 15:14:19,197 | DEBUG | response_closed.started
+2025-07-11 15:14:19,210 | DEBUG | response_closed.complete
+2025-07-11 15:14:19,210 | DEBUG | close.started
+2025-07-11 15:14:19,211 | DEBUG | close.complete
+2025-07-11 15:14:19,238 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:14:19,561 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-11 15:14:19,562 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ABEA1B81D0>
+2025-07-11 15:14:19,562 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:14:19,564 | DEBUG | send_request_headers.complete
+2025-07-11 15:14:19,564 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:14:19,564 | DEBUG | send_request_body.complete
+2025-07-11 15:14:19,564 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:14:19,564 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:14:19 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-11 15:14:19,565 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-11 15:14:19,565 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:14:19,565 | DEBUG | receive_response_body.complete
+2025-07-11 15:14:19,565 | DEBUG | response_closed.started
+2025-07-11 15:14:19,565 | DEBUG | response_closed.complete
+2025-07-11 15:14:19,565 | DEBUG | close.started
+2025-07-11 15:14:19,565 | DEBUG | close.complete
+2025-07-11 15:14:19,567 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-11 15:14:19,567 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001ABEA1FC9D0>
+2025-07-11 15:14:19,568 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:14:19,568 | DEBUG | send_request_headers.complete
+2025-07-11 15:14:19,569 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-11 15:14:19,569 | DEBUG | send_request_body.complete
+2025-07-11 15:14:19,569 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:14:19,585 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:14:19 GMT'), (b'server', b'uvicorn'), (b'content-length', b'43201'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-11 15:14:19,585 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-11 15:14:19,585 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-11 15:14:19,585 | DEBUG | receive_response_body.complete
+2025-07-11 15:14:19,585 | DEBUG | response_closed.started
+2025-07-11 15:14:19,585 | DEBUG | response_closed.complete
+2025-07-11 15:14:19,585 | DEBUG | close.started
+2025-07-11 15:14:19,585 | DEBUG | close.complete
+2025-07-11 15:14:19,589 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:14:20,142 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-11 15:14:26,507 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:14:26,507 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:14:26,511 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:14:30,309 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:14:30,315 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:18:33,174 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:18:33,193 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:18:33,542 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-11 15:18:33,710 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EF9282BCD0>
+2025-07-11 15:18:33,711 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001EF90A31010> server_hostname='api.gradio.app' timeout=3
+2025-07-11 15:18:33,793 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-11 15:18:33,800 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:18:33,801 | DEBUG | interactive is False
+2025-07-11 15:18:33,801 | DEBUG | platform is win32
+2025-07-11 15:18:33,868 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:18:33,870 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-11 15:18:33,889 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-11 15:18:34,009 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EF91065D50>
+2025-07-11 15:18:34,010 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:18:34,010 | DEBUG | send_request_headers.complete
+2025-07-11 15:18:34,010 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:18:34,011 | DEBUG | send_request_body.complete
+2025-07-11 15:18:34,011 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:18:34,190 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 03:22:05 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-11 15:18:34,204 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-11 15:18:34,204 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:18:34,204 | DEBUG | receive_response_body.complete
+2025-07-11 15:18:34,205 | DEBUG | response_closed.started
+2025-07-11 15:18:34,205 | DEBUG | response_closed.complete
+2025-07-11 15:18:34,205 | DEBUG | close.started
+2025-07-11 15:18:34,238 | DEBUG | close.complete
+2025-07-11 15:18:34,441 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:18:34,760 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-11 15:18:34,760 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EF90BE11D0>
+2025-07-11 15:18:34,761 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:18:34,761 | DEBUG | send_request_headers.complete
+2025-07-11 15:18:34,761 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:18:34,762 | DEBUG | send_request_body.complete
+2025-07-11 15:18:34,762 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:18:34,763 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:18:34 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-11 15:18:34,763 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-11 15:18:34,763 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:18:34,763 | DEBUG | receive_response_body.complete
+2025-07-11 15:18:34,763 | DEBUG | response_closed.started
+2025-07-11 15:18:34,763 | DEBUG | response_closed.complete
+2025-07-11 15:18:34,763 | DEBUG | close.started
+2025-07-11 15:18:34,764 | DEBUG | close.complete
+2025-07-11 15:18:34,765 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-11 15:18:34,765 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001EF90BE38D0>
+2025-07-11 15:18:34,765 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:18:34,766 | DEBUG | send_request_headers.complete
+2025-07-11 15:18:34,766 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-11 15:18:34,766 | DEBUG | send_request_body.complete
+2025-07-11 15:18:34,766 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:18:34,783 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:18:34 GMT'), (b'server', b'uvicorn'), (b'content-length', b'44307'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-11 15:18:34,783 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-11 15:18:34,783 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-11 15:18:34,783 | DEBUG | receive_response_body.complete
+2025-07-11 15:18:34,784 | DEBUG | response_closed.started
+2025-07-11 15:18:34,784 | DEBUG | response_closed.complete
+2025-07-11 15:18:34,784 | DEBUG | close.started
+2025-07-11 15:18:34,784 | DEBUG | close.complete
+2025-07-11 15:18:34,787 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:18:35,335 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-11 15:25:19,411 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:25:19,472 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:25:19,753 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-11 15:25:19,987 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022E00153590>
+2025-07-11 15:25:19,987 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000022E00025130> server_hostname='api.gradio.app' timeout=3
+2025-07-11 15:25:20,018 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-11 15:25:20,034 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:25:20,034 | DEBUG | interactive is False
+2025-07-11 15:25:20,034 | DEBUG | platform is win32
+2025-07-11 15:25:20,096 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-11 15:25:20,096 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-11 15:25:20,128 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-11 15:25:20,295 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022E0222C3D0>
+2025-07-11 15:25:20,295 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:25:20,310 | DEBUG | send_request_headers.complete
+2025-07-11 15:25:20,310 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:25:20,310 | DEBUG | send_request_body.complete
+2025-07-11 15:25:20,310 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:25:20,495 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 03:28:51 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-11 15:25:20,496 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-11 15:25:20,511 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:25:20,511 | DEBUG | receive_response_body.complete
+2025-07-11 15:25:20,511 | DEBUG | response_closed.started
+2025-07-11 15:25:20,512 | DEBUG | response_closed.complete
+2025-07-11 15:25:20,512 | DEBUG | close.started
+2025-07-11 15:25:20,516 | DEBUG | close.complete
+2025-07-11 15:25:20,687 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:25:21,010 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-11 15:25:21,010 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022E031512D0>
+2025-07-11 15:25:21,010 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-11 15:25:21,011 | DEBUG | send_request_headers.complete
+2025-07-11 15:25:21,011 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-11 15:25:21,011 | DEBUG | send_request_body.complete
+2025-07-11 15:25:21,011 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-11 15:25:21,013 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:25:20 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-11 15:25:21,014 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-11 15:25:21,014 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-11 15:25:21,014 | DEBUG | receive_response_body.complete
+2025-07-11 15:25:21,014 | DEBUG | response_closed.started
+2025-07-11 15:25:21,014 | DEBUG | response_closed.complete
+2025-07-11 15:25:21,014 | DEBUG | close.started
+2025-07-11 15:25:21,014 | DEBUG | close.complete
+2025-07-11 15:25:21,015 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-11 15:25:21,034 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022E0018B0D0>
+2025-07-11 15:25:21,034 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:25:21,034 | DEBUG | send_request_headers.complete
+2025-07-11 15:25:21,035 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-11 15:25:21,035 | DEBUG | send_request_body.complete
+2025-07-11 15:25:21,035 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-11 15:25:21,055 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Fri, 11 Jul 2025 03:25:20 GMT'), (b'server', b'uvicorn'), (b'content-length', b'44322'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-11 15:25:21,055 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-11 15:25:21,055 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-11 15:25:21,055 | DEBUG | receive_response_body.complete
+2025-07-11 15:25:21,055 | DEBUG | response_closed.started
+2025-07-11 15:25:21,055 | DEBUG | response_closed.complete
+2025-07-11 15:25:21,055 | DEBUG | close.started
+2025-07-11 15:25:21,055 | DEBUG | close.complete
+2025-07-11 15:25:21,059 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-11 15:25:21,615 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-11 15:25:30,116 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:25:30,117 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:25:30,121 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:25:36,737 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:25:36,741 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:25:38,384 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:25:38,388 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:25:57,406 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:25:57,408 | DEBUG | Using proactor: IocpProactor
+2025-07-11 15:25:59,055 | INFO | No LOGIN_URL provided, skipping login.
+2025-07-11 15:26:20,308 | WARNING | Timeout waiting for JS content: div.dynamic-section
+2025-07-11 15:26:23,310 | DEBUG | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-d23cce9f-a5b9-45f8-b6c7-b76b9b0ec1e0', 'json_data': {'messages': [{'content': 'Below is a list of property listing descriptions.\n\nExtract the following fields from each:\n- Title (or address)\n- Price (sale or rent)\n- Number of Bedrooms\n- Number of Bathrooms\n- Location\n- Listing URL (if available)\n\nFormat the result as a CSV table with the following columns:\nTitle,Price,Beds,Baths,Location,URL\n\nGet to know Auckland City | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As of Jun-25, medium-sized houses (3-4 bedrooms) in City Centre are listed for $1,210,500 on average, a change of 3% compared to the previous three months. Year on year, the average listing price for medium-sized homes in City Centre has actually decreased by 17%, up from a value of $1,463,300. | Meanwhile, the average sales price for small houses (1-2 bedrooms) in City Centre is $431,150. This represents a change of 2% versus the last three months ($438,900). Compared to last year, small properties in City Centre have seen a 1% fall from $435,500. | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As o... | Show all | More about this data\nWant more insights? | Research suburbs and browse sold property details.\nTrack your home¡¯s value | Get fortnightly updates when your HomesEstimate is refreshed.\nRecent sales nearby | Sold Jun 2025 | $173,000 | 1 | 1 | 210/11 Union Street, Auckland Central, Auckland | May Ma | Sold May 2025 | $350,000 | 2 | 1 | 1424/430 Queen Street, Auckland Central, Auckland | Lisa Hui | Sold Apr 2025 | $410,000 | 2 | 1 | 710/188 Hobson Street, Auckland Central, Auckland | Selina Zheng | View more\nKathy Passier | A Rare Ground-Floor Gem in Auckland CBD! | City Centre, Auckland City | 1 | 1 | 1 | Price by negotiation', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2025-07-11 15:26:23,331 | DEBUG | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-07-11 15:26:23,365 | DEBUG | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-07-11 15:26:23,392 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022E059945D0>
+2025-07-11 15:26:23,392 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000022E066DA210> server_hostname='api.openai.com' timeout=None
+2025-07-11 15:26:23,402 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000022E05828C90>
+2025-07-11 15:26:23,402 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-07-11 15:26:23,403 | DEBUG | send_request_headers.complete
+2025-07-11 15:26:23,403 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-07-11 15:26:23,403 | DEBUG | send_request_body.complete
+2025-07-11 15:26:23,403 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-07-11 15:26:26,330 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Fri, 11 Jul 2025 03:29:57 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-tnjpviqxybklvyhygs429u6c'), (b'openai-processing-ms', b'2322'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'2346'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199531'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'140ms'), (b'x-request-id', b'req_ca710400382b5694c68690b67d0caa18'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=P.AyMvfIT4ekYciJJT0KiiB4D4rSp92g7sCfrxwccuY-1752204597-1.0.1.1-oX6.eFAuGh8Y3YqCixwo5Z_I1ip8lEfFZU5mtsBqNTBv7kFnbJpcMJzxfhpWjf1T17QUWZ0d7YkvQMyspXA.JCq8UYtbYkmpXCZfOsAihZA; path=/; expires=Fri, 11-Jul-25 03:59:57 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=jrmUuYc.W8Kg2235yAdpB_sfvl09.1yzJc1Sde0BovU-1752204597774-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95d5381ddc34d9aa-AKL'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-11 15:26:26,331 | INFO | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-11 15:26:26,332 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-07-11 15:26:26,333 | DEBUG | receive_response_body.complete
+2025-07-11 15:26:26,333 | DEBUG | response_closed.started
+2025-07-11 15:26:26,333 | DEBUG | response_closed.complete
+2025-07-11 15:26:26,333 | DEBUG | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Fri, 11 Jul 2025 03:29:57 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-tnjpviqxybklvyhygs429u6c'), ('openai-processing-ms', '2322'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '2346'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199531'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '140ms'), ('x-request-id', 'req_ca710400382b5694c68690b67d0caa18'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=P.AyMvfIT4ekYciJJT0KiiB4D4rSp92g7sCfrxwccuY-1752204597-1.0.1.1-oX6.eFAuGh8Y3YqCixwo5Z_I1ip8lEfFZU5mtsBqNTBv7kFnbJpcMJzxfhpWjf1T17QUWZ0d7YkvQMyspXA.JCq8UYtbYkmpXCZfOsAihZA; path=/; expires=Fri, 11-Jul-25 03:59:57 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=jrmUuYc.W8Kg2235yAdpB_sfvl09.1yzJc1Sde0BovU-1752204597774-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '95d5381ddc34d9aa-AKL'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-07-11 15:26:26,333 | DEBUG | request_id: req_ca710400382b5694c68690b67d0caa18
+2025-07-11 15:26:26,360 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:26:26,360 | DEBUG | Loaded backend agg version v2.2.
+2025-07-11 15:26:26,361 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-11 15:27:14,944 | DEBUG | close.started
+2025-07-11 15:27:14,945 | DEBUG | close.complete

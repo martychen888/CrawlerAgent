@@ -1,111 +1,124 @@
 import gradio as gr
-from gradio.themes.base import Base
-from gradio.themes.soft import Soft
-from gradio.themes.monochrome import Monochrome
-import os
+from main import run_scraper_live, update_config, load_config
 
-def create_ui(cfg, run_scraper_fn, update_config_fn):
-    llm_cfg = cfg.get("llm", {})
 
+def create_ui(cfg, run_scraper_live_fn, update_config_fn):
     with gr.Blocks() as demo:
         gr.Markdown("## 🕷️ ChatCrawler")
 
-        gr.HTML("""
-                <style>
-                    body, .gradio-container {
-                        background-color: #898989 !important;
-                        color: #f0f0f0 !important;
-                    }
-                </style>
-                """)
-
-        with gr.Tab("Run Crawler"):
+        with gr.Tab("▶️ Run Crawler"):
             with gr.Row():
                 url_input = gr.Text(label="Website URL", value=cfg.get("URL", "https://example.com/"))
+                headless_toggle = gr.Checkbox(value=True, label="Run Headless")
+
+            prompt_input = gr.Textbox(
+                label="Prompt Template",
+                lines=6,
+                value=cfg.get("PROMPT", """From the following scraped HTML content, {data}"""),
+            )
 
             with gr.Row():
-                prompt_input = gr.Textbox(
-                    label="Prompt Template",
-                    lines=6,
-                    value=cfg.get("PROMPT", "Extract key property details:\n\n{data}")
+                engine_choice = gr.Dropdown(
+                    ["requests", "selenium", "playwright"],
+                    value="playwright",
+                    label="Scraper Engine"
                 )
-
-            # Row 1: Engine + Headless
-            with gr.Row():
-                with gr.Column(scale=3):
-                    engine_choice = gr.Dropdown(["requests", "selenium", "playwright"], value="playwright", label="Scraper Engine")
-                with gr.Column(scale=1):
-                    headless_toggle = gr.Checkbox(value=True, label="Run Headless")
-
-            # Row 2: Retries + Listings
-            with gr.Row():
                 retry_slider = gr.Slider(minimum=1, maximum=5, value=3, label="Retries")
                 listing_slider = gr.Slider(minimum=1, maximum=20, value=5, step=1, label="🔢 Listings to Analyze")
 
-            # Row 3: Buttons side by side
-            with gr.Row(equal_height=True):
-                run_button = gr.Button("🚀 Start Scraper", scale=1)
-                reset_button = gr.Button("🔁 Reset", scale=1)
-
-            # Row 4: Logs and AI preview
+            with gr.Row():
+                run_button = gr.Button("🚀 Start Scraper")
+                reset_btn = gr.Button("♻️ Reset", variant="secondary")
+            
             with gr.Row():
                 logs_box = gr.Textbox(label="📜 Logs", lines=10)
-                output_box = gr.Textbox(label="📦 AI Output (Preview)", lines=10)
+                output_box = gr.Textbox(label="📦 AI Output (CSV Preview Text)", lines=10)
 
-            # Row 5: CSV + Stats
-            with gr.Row():
-                download_button = gr.File(label="📅 Download CSV", visible=True)
-                stats_box = gr.Textbox(label="📊 Stats", interactive=False)
+            with gr.Row():  
+                csv_table = gr.Dataframe(
+                    headers=["Title", "Price", "Beds", "Baths", "Location", "URL"],
+                    col_count=(6, "fixed"),
+                    label="📄 CSV Table Preview",
+                    interactive=False
+                )
+                download_link = gr.File(label="📁 Download CSV File")
 
-            # Function to wrap scraper output
-            def wrapper_run_scraper(*args):
-                for logs, output, path in run_scraper_fn(*args):
-                    stats = f"{output.count(chr(10))} CSV lines generated (including header)." if output else "No output generated."
-                    download = path if path and os.path.exists(path) else None
-                    yield logs, output, download, stats
-
-            # Hook run button
             run_button.click(
-                fn=wrapper_run_scraper,
+                fn=run_scraper_live_fn,
                 inputs=[url_input, prompt_input, engine_choice, headless_toggle, retry_slider, listing_slider],
-                outputs=[logs_box, output_box, download_button, stats_box]
+                outputs=[logs_box, output_box, csv_table, download_link]
             )
 
-            # Reset button clears everything
-            reset_button.click(
-                fn=lambda: ("", "", None, ""),
+            reset_btn.click(
+                lambda: ("", "", [], None),
                 inputs=[],
-                outputs=[logs_box, output_box, download_button, stats_box]
+                outputs=[logs_box, output_box, csv_table, download_link]
             )
 
         with gr.Tab("⚙️ Settings"):
-            api_key_input = gr.Text(label="OpenAI API Key", value=cfg.get("OPENAI_API_KEY", ""), type="password")
+            with gr.Row():
+                model_type_input = gr.Radio(
+                    ["OpenAI", "Ollama", "DeepSeek"],
+                    value=cfg.get("llm", {}).get("model_type", "OpenAI"),
+                    label="LLM Provider"
+                )
 
-            llm_type_input = gr.Dropdown(["OpenAI", "Ollama"], value=llm_cfg.get("model_type", "OpenAI"), label="LLM Type")
-            openai_model_input = gr.Text(label="OpenAI Model", value=llm_cfg.get("openai_model_name", "gpt-4"))
-            ollama_model_input = gr.Text(label="Ollama Model", value=llm_cfg.get("ollama_model_name", "llama3"))
-            ollama_url_input = gr.Text(label="Ollama API URL", value=llm_cfg.get("ollama_api_url", "http://localhost:11434"))
+            with gr.Row(visible=True) as openai_row:
+                api_key_input = gr.Text(label="OpenAI API Key", value=cfg.get("OPENAI_API_KEY", ""), type="password")
+                model_input = gr.Text(label="OpenAI Model", value=cfg.get("llm", {}).get("openai_model_name", "gpt-4"))
 
-            login_url_input = gr.Text(label="Login URL", value=cfg.get("LOGIN_URL", ""))
-            user_input = gr.Text(label="Username", value=cfg.get("USERNAME", ""))
-            pw_input = gr.Text(label="Password", value=cfg.get("PASSWORD", ""), type="password")
+            with gr.Row(visible=False) as ollama_row:
+                ollama_model_input = gr.Dropdown(
+                    choices=cfg.get("llm", {}).get("ollama_model_choices", ["llama3"]),
+                    value=cfg.get("llm", {}).get("ollama_model_name", "llama3"),
+                    label="Ollama Model"
+                )
+                ollama_url_input = gr.Text(label="Ollama API URL", value=cfg.get("llm", {}).get("ollama_api_url", "http://localhost:11434"))
 
-            save_btn = gr.Button("📏 Save Config")
+            with gr.Row(visible=False) as deepseek_row:
+                deepseek_model_input = gr.Text(label="DeepSeek Model", value=cfg.get("llm", {}).get("deepseek_model_name", "deepseek-chat"))
+                deepseek_api_input = gr.Text(label="DeepSeek API Key", value=cfg.get("llm", {}).get("deepseek_api_key", ""), type="password")
+
+            with gr.Row():
+                login_url_input = gr.Text(label="Login URL", value=cfg.get("LOGIN_URL", ""))
+                user_input = gr.Text(label="Username", value=cfg.get("USERNAME", ""))
+                pw_input = gr.Text(label="Password", value=cfg.get("PASSWORD", ""), type="password")
+
+            save_btn = gr.Button("📂 Save Config")
             status_msg = gr.Textbox(label="Status", interactive=False)
+
+            def toggle_model_visibility(selected):
+                return (
+                    gr.update(visible=(selected == "OpenAI")),
+                    gr.update(visible=(selected == "Ollama")),
+                    gr.update(visible=(selected == "DeepSeek"))
+                )
+
+            model_type_input.change(
+                fn=toggle_model_visibility,
+                inputs=model_type_input,
+                outputs=[openai_row, ollama_row, deepseek_row]
+            )
 
             save_btn.click(
                 fn=update_config_fn,
                 inputs=[
                     api_key_input,
-                    llm_type_input,
-                    openai_model_input,
+                    model_input,
                     ollama_model_input,
                     ollama_url_input,
                     login_url_input,
                     user_input,
-                    pw_input
+                    pw_input,
+                    model_type_input,
+                    deepseek_model_input,
+                    deepseek_api_input
                 ],
                 outputs=status_msg
             )
 
     return demo
+
+
+cfg = load_config()
+demo = create_ui(cfg, run_scraper_live, update_config)

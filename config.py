@@ -11,7 +11,7 @@ def load_config():
 
 cfg = load_config()
 
-# Flat config values
+# Global values
 OPENAI_API_KEY = cfg.get("OPENAI_API_KEY", "")
 USERNAME = cfg.get("USERNAME", "")
 PASSWORD = cfg.get("PASSWORD", "")
@@ -22,15 +22,17 @@ JS_WAIT_SELECTOR = cfg.get("JS_WAIT_SELECTOR", "div.dynamic-section")
 RETRY_COUNT = int(cfg.get("RETRY_COUNT", 3))
 MAX_PAGES = int(cfg.get("MAX_PAGES", 3))
 
+# Listing selectors used for scraping repeated items
 LISTING_SELECTORS = cfg.get("LISTING_SELECTORS", [
     "div[class*='card']",
     "article",
-    "li[class*='listing']"
+    "li[class*='listing']",
+    ".tm-property-search-card"
 ])
 
-# LLM block values
-LLM_CONFIG = cfg.get("llm", {})
-LLM_TYPE = LLM_CONFIG.get("model_type", "OpenAI")  # "OpenAI" or "Ollama"
-OPENAI_MODEL = LLM_CONFIG.get("openai_model_name", "gpt-4")
-OLLAMA_MODEL = LLM_CONFIG.get("ollama_model_name", "llama3")
-OLLAMA_API_URL = LLM_CONFIG.get("ollama_api_url", "http://localhost:11434")
+# LLM Config
+llm_cfg = cfg.get("llm", {})
+MODEL_TYPE = llm_cfg.get("model_type", "OpenAI")
+OPENAI_MODEL = llm_cfg.get("openai_model_name", "gpt-4")
+OLLAMA_MODEL = llm_cfg.get("ollama_model_name", "llama3")
+OLLAMA_API_URL = llm_cfg.get("ollama_api_url", "http://localhost:11434")

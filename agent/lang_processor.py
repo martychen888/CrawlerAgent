@@ -1,28 +1,31 @@
 from langchain.prompts import PromptTemplate
-from agent.llm import generate_response
-import os
-
-MAX_INPUT_CHARS = 8000
+from langchain.schema import HumanMessage
+from config import MODEL_TYPE, OPENAI_API_KEY, OPENAI_MODEL, OLLAMA_MODEL, OLLAMA_API_URL
 
 def langchain_process(scraped_data, prompt_text):
-    # scraped_data now already contains clean plain-text blocks
-    os.makedirs("output", exist_ok=True)
-    with open("output/llm_input.txt", "w", encoding="utf-8") as f:
-        f.write("\n\n---\n\n".join(scraped_data))
+    from langchain_core.messages import HumanMessage
+
+    try:
+        from langchain_openai import ChatOpenAI
+    except ImportError:
+        ChatOpenAI = None
+
+    try:
+        from langchain_community.chat_models import ChatOllama
+    except ImportError:
+        ChatOllama = None
 
     content = "\n".join(scraped_data)
-    if len(content) > MAX_INPUT_CHARS:
-        content = content[:MAX_INPUT_CHARS]
+    prompt = PromptTemplate.from_template(prompt_text.strip()).format(data=content)
 
-    enhanced_prompt = (
-        prompt_text.strip()
-        + "\n\nFormat the result as a CSV table with the following headers:\n"
-        + "Title,Price,Beds,Baths,Location,URL\n"
-        + "Only output valid rows, no markdown or explanation.\n"
-    )
+    if MODEL_TYPE == "Ollama":
+        if ChatOllama is None:
+            raise ImportError("LangChain Ollama not available. Install with `pip install langchain-community`.")
+        llm = ChatOllama(model=OLLAMA_MODEL, base_url=OLLAMA_API_URL)
+    else:
+        if ChatOpenAI is None:
+            raise ImportError("LangChain OpenAI not available. Install with `pip install langchain-openai`.")
+        llm = ChatOpenAI(model=OPENAI_MODEL, openai_api_key=OPENAI_API_KEY, temperature=0)
 
-    prompt = PromptTemplate.from_template(enhanced_prompt).format(data=content)
-
-    print("🧠 Prompt preview sent to LLM:\n", prompt[:1000])
-
-    return generate_response(prompt)
+    response = llm.invoke([HumanMessage(content=prompt)])
+    return response.content.strip()
