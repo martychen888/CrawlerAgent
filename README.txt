@@ -20,18 +20,20 @@ Paste the **full target URL** (e.g.,
 `https://www.trademe.co.nz/a/property/residential/sale/auckland`)
 
 🧾 Prompt Template  
-Write a custom instruction to the AI. For example:
+Below is a list of property listing descriptions.
 
-    From the following scraped HTML content, extract the following for each property:
-    - Title or address
-    - Price (rent or sale)
-    - Number of bedrooms and bathrooms
-    - Location
-    - Listing URL
+Extract the following fields from each:
+- Title (or address)
+- Price (sale or rent)
+- Number of Bedrooms
+- Number of Bathrooms
+- Location
+- Listing URL (if available)
 
-    Format it as a CSV with columns: Title, Price, Beds, Baths, Location, URL
+Format the result as a CSV table with the following columns:
+Title,Price,Beds,Baths,Location,URL
 
-    {data}
+{data}
 
 > NOTE: The `{data}` placeholder is required — it gets replaced with the scraped HTML content.
 
@@ -52,18 +54,73 @@ Set the number of times to retry fetching a page in case of failure (1–5).
 🔢 Listings to Analyze  
 Choose how many top listings to send to the AI (start with 3–5 to avoid GPT token limits).
 
-🛠️ Advanced Configuration (in config.json)
-==========================================
+🤖 LLM Model Selection (OpenAI vs. Ollama)
 
-{
-  "OPENAI_API_KEY": "your-key-here",
-  "OPENAI_MODEL": "gpt-4",
-  "LOGIN_URL": "https://example.com/login",
-  "USERNAME": "your-username",
-  "PASSWORD": "your-password",
-  "JS_WAIT_SELECTOR": ".tm-property-search-card",
-  "MAX_LISTINGS": 5
-}
+Settings Tab
+
+Use the Settings tab to configure which LLM backend to use:
+
+Option 1: OpenAI (Cloud)
+
+Requires an OpenAI API Key
+
+Model is set to gpt-4 or gpt-3.5-turbo
+
+Best when scraping complex content or when using AI from anywhere
+
+Option 2: Ollama (Local Models)
+
+Select "Ollama" from LLM Type
+
+Set the local model name (e.g., llama3, gemma, mistral)
+
+Requires Ollama installed locally:
+
+ollama run llama3
+
+Ensure ollama is running on http://localhost:11434
+
+Works entirely offline with downloaded models
+
+When to Use Ollama:
+
+When you want data privacy
+
+When you need full offline AI scraping
+
+When running on servers or dev machines with GPUs
+
+When to Use OpenAI:
+
+When highest accuracy or context size is needed
+
+When you want minimal local setup
+
+💡 Tips
+
+Save your config.json to reuse OpenAI keys or scraping settings.
+
+Adjust LISTING_SELECTORS in config.json to control which HTML blocks the AI sees.
+
+You can preview the cleaned input fed to the LLM in output/llm_input.txt.
+
+Output is saved to output/ai_output.csv
+
+🛠️ Advanced Features
+
+Supports login via LOGIN_URL, USERNAME, and PASSWORD fields in config.
+
+Supports scraping multiple pages via MAX_PAGES
+
+Uses prompt templating ({data} placeholder)
+
+📅 UI Walkthrough
+
+Left section: Input, prompt, scraper settings
+
+Right section: Logs, AI output, CSV download
+
+Tabs: Switch between scraping and settings
 
 🔑 Credentials (Optional)  
 If login is required, fill in:
