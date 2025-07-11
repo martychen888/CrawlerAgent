@@ -1,5 +1,11 @@
+Here is the extracted information formatted as a CSV table:
+
+```csv
 Title,Price,Beds,Baths,Location,URL
-210/11 Union Street, Auckland Central, Auckland,$173,000,1,1,Auckland Central,
-1424/430 Queen Street, Auckland Central, Auckland,$350,000,2,1,Auckland Central,
-710/188 Hobson Street, Auckland Central, Auckland,$410,000,2,1,Auckland Central,
-City Centre, Auckland City,$269,000,2,1,City Centre,
+"210/11 Union Street, Auckland Central, Auckland","$173,000","1","1","Auckland Central, Auckland",""
+"1424/430 Queen Street, Auckland Central, Auckland","$350,000","2","1","Auckland Central, Auckland",""
+"710/188 Hobson Street, Auckland Central, Auckland","$410,000","2","1","Auckland Central, Auckland",""
+"A Rare Ground-Floor Gem in Auckland CBD!","Price by negotiation","1","1","City Centre, Auckland City",""
+```
+
+Note: The URL field is left empty as no specific URLs were provided in the descriptions.

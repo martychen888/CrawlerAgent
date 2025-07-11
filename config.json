@@ -18,6 +18,8 @@
     "model_type": "OpenAI",
     "openai_model_name": "gpt-4o-mini",
     "ollama_model_name": "llama3",
-    "ollama_api_url": "http://localhost:11434"
+    "ollama_api_url": "http://localhost:11434",
+    "ollama_model_choices": ["llama3", "gemma", "mistral", "phi3"],
+    "deepseek_model_name": "deepseek-chat"
   }
 }
