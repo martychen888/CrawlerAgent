@@ -1,13 +1,12 @@
-
-import gradio as gr
-import json
 import os
-import validators
+import json
 from cryptography.fernet import Fernet
+import gradio as gr
 
 from scraper.web_scraper import WebScraper
 from agent.lang_processor import langchain_process
 from logger import logger
+from ui import create_ui
 
 CONFIG_PATH = "config.json"
 KEY_FILE = "secret.key"
@@ -54,7 +53,7 @@ def save_config(cfg):
 def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
     engine = engine or auto_select_engine(url)
     if not url or not url.startswith("http"):
-        yield "❌ Invalid URL. Please enter a valid website starting with http/https.", ""
+        yield "❌ Invalid URL. Please enter a valid website starting with http/https.", "", None
         return
 
     log = []
@@ -68,10 +67,13 @@ def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
         data = scraper.extract_data(html)
         scraper.close()
 
-        log.append(f"✅ Scraping done. Found {len(data)} listings.")
-        trimmed_data = data[:max_listings]
+        log.append(f"✅ Scraping done. Found {len(data)} listings before trimming.")
 
-        log.append(f"🧠 Analyzing top {len(trimmed_data)} listings with LLM...")
+        trimmed_data = data[:max_listings]
+        if trimmed_data:
+            log.append(f"🧪 Sample card preview: {trimmed_data[0][:300].replace(chr(10), ' ')}...")
+        log.append(f"✂️ Trimmed to {len(trimmed_data)} listings for LLM.")
+        log.append("🧠 Analyzing listings with LLM...")
 
         ai_output = langchain_process(trimmed_data, prompt)
 
@@ -81,59 +83,33 @@ def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
             f.write(ai_output)
 
         log.append(f"📁 Output saved to {output_path}")
-        yield "\n".join(log), ai_output
+        yield "\n".join(log), ai_output, output_path
     except Exception as e:
         logger.exception("Scraper error")
-        yield f"❌ Error: {str(e)}", ""
+        yield f"❌ Error: {str(e)}", "", None
 
 # ===============================
-# ⚙️ Save Config Action
+# ⚙️ Config Save Hook
 # ===============================
-def update_config(api_key, model, login_url, user, pw):
+def update_config(api_key, model_type, openai_model, ollama_model, ollama_url, login_url, user, pw):
     cfg = {
         "OPENAI_API_KEY": api_key.strip(),
-        "OPENAI_MODEL": model.strip(),
         "LOGIN_URL": login_url.strip(),
         "USERNAME": user.strip(),
-        "PASSWORD": pw.strip()
+        "PASSWORD": pw.strip(),
+        "llm": {
+            "model_type": model_type.strip(),
+            "openai_model_name": openai_model.strip(),
+            "ollama_model_name": ollama_model.strip(),
+            "ollama_api_url": ollama_url.strip()
+        }
     }
     save_config(cfg)
     return "✅ Config saved!"
 
 # ===============================
-# 🧪 UI Setup
+# 🚀 Launch Gradio Interface
 # ===============================
 cfg = load_config()
-
-with gr.Blocks() as demo:
-    gr.Markdown("## 🕷️ ChatCrawler")
-
-    with gr.Tab("Run Crawler"):
-        with gr.Row():
-            url_input = gr.Text(label="Website URL", value=cfg.get("URL", "https://example.com/"))
-            prompt_input = gr.Textbox(label="Prompt Template", lines=6, value=cfg.get("PROMPT", "Extract key property details from:\n\n{data}"))
-        with gr.Row():
-            engine_choice = gr.Dropdown(["requests", "selenium", "playwright"], value="playwright", label="Scraper Engine")
-            headless_toggle = gr.Checkbox(value=True, label="Run Headless")
-            retry_slider = gr.Slider(minimum=1, maximum=5, value=3, label="Retries")
-            listing_slider = gr.Slider(minimum=1, maximum=20, value=5, step=1, label="🔢 Listings to Analyze")
-        run_button = gr.Button("🚀 Start")
-        logs_box = gr.Textbox(label="📜 Logs", lines=10)
-        output_box = gr.Textbox(label="📦 AI Output", lines=10)
-        run_button.click(
-            fn=run_scraper_live,
-            inputs=[url_input, prompt_input, engine_choice, headless_toggle, retry_slider, listing_slider],
-            outputs=[logs_box, output_box]
-        )
-
-    with gr.Tab("⚙️ Settings"):
-        api_key_input = gr.Text(label="OpenAI API Key", value=cfg.get("OPENAI_API_KEY", ""), type="password")
-        model_input = gr.Text(label="OpenAI Model", value=cfg.get("OPENAI_MODEL", "gpt-4"))
-        login_url_input = gr.Text(label="Login URL", value=cfg.get("LOGIN_URL", ""))
-        user_input = gr.Text(label="Username", value=cfg.get("USERNAME", ""))
-        pw_input = gr.Text(label="Password", value=cfg.get("PASSWORD", ""), type="password")
-        save_btn = gr.Button("💾 Save Config")
-        status_msg = gr.Textbox(label="Status", interactive=False)
-        save_btn.click(fn=update_config, inputs=[api_key_input, model_input, login_url_input, user_input, pw_input], outputs=status_msg)
-
-demo.queue().launch()
+ui = create_ui(cfg, run_scraper_live, update_config)
+ui.queue().launch()

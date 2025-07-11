@@ -2,6 +2,7 @@ import os
 from bs4 import BeautifulSoup
 from scraper.strategies import get_strategy
 from logger import logger
+from config import LISTING_SELECTORS
 
 class WebScraper:
     def __init__(self, engine="requests", headless=True):
@@ -35,17 +36,20 @@ class WebScraper:
 
     def extract_data(self, html):
         soup = BeautifulSoup(html, "lxml")
-        # Dynamically capture all card-like content from repeated items
-        listing_tags = soup.select("div[class*='card'], article, li[class*='listing'], .tm-property-search-card")
+        selector_str = ", ".join(LISTING_SELECTORS)
+        listing_tags = soup.select(selector_str)
         if not listing_tags:
             listing_tags = soup.find_all("div")
 
         extracted = []
+        seen = set()
         for tag in listing_tags:
             if tag.name in ["script", "style"]:
                 continue
-            # Get outer HTML so LLM sees attributes/structure
-            extracted.append(str(tag))
+            text = tag.get_text(separator=" | ", strip=True)
+            if text and text not in seen:
+                seen.add(text)
+                extracted.append(text)
         return extracted
 
     def close(self):

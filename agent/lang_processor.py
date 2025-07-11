@@ -1,30 +1,28 @@
-from langchain_openai import ChatOpenAI 
 from langchain.prompts import PromptTemplate
-from langchain.schema import HumanMessage
-from config import OPENAI_API_KEY, OPENAI_MODEL
+from agent.llm import generate_response
+import os
+
+MAX_INPUT_CHARS = 8000
 
 def langchain_process(scraped_data, prompt_text):
-    # Join the scraped listing data passed from the caller (already sliced by max_listings)
-    content = "\n".join(scraped_data)
+    # scraped_data now already contains clean plain-text blocks
+    os.makedirs("output", exist_ok=True)
+    with open("output/llm_input.txt", "w", encoding="utf-8") as f:
+        f.write("\n\n---\n\n".join(scraped_data))
 
-    # Build the enhanced prompt for GPT
+    content = "\n".join(scraped_data)
+    if len(content) > MAX_INPUT_CHARS:
+        content = content[:MAX_INPUT_CHARS]
+
     enhanced_prompt = (
         prompt_text.strip()
-        + "\n\nFormat the result as a CSV table. Only output the CSV rows and headers.\n"
-        + "If data is insufficient, output a valid CSV header row anyway.\n"
-        + "Avoid explanations or markdown.\n"
+        + "\n\nFormat the result as a CSV table with the following headers:\n"
+        + "Title,Price,Beds,Baths,Location,URL\n"
+        + "Only output valid rows, no markdown or explanation.\n"
     )
 
-    # Replace {data} in prompt template with actual listing content
     prompt = PromptTemplate.from_template(enhanced_prompt).format(data=content)
 
-    # Call OpenAI's chat model
-    llm = ChatOpenAI(
-        temperature=0,
-        model=OPENAI_MODEL,
-        openai_api_key=OPENAI_API_KEY
-    )
-    response = llm.invoke([HumanMessage(content=prompt)])
+    print("🧠 Prompt preview sent to LLM:\n", prompt[:1000])
 
-    # Return clean result
-    return response.content.strip()
+    return generate_response(prompt)
