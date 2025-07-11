@@ -20,18 +20,20 @@ Paste the **full target URL** (e.g.,
 `https://www.trademe.co.nz/a/property/residential/sale/auckland`)
 
 🧾 Prompt Template  
-Write a custom instruction to the AI. For example:
+Below is a list of property listing descriptions.
 
-    From the following scraped HTML content, extract the following for each property:
-    - Title or address
-    - Price (rent or sale)
-    - Number of bedrooms and bathrooms
-    - Location
-    - Listing URL
+Extract the following fields from each:
+- Title (or address)
+- Price (sale or rent)
+- Number of Bedrooms
+- Number of Bathrooms
+- Location
+- Listing URL (if available)
 
-    Format it as a CSV with columns: Title, Price, Beds, Baths, Location, URL
+Format the result as a CSV table with the following columns:
+Title,Price,Beds,Baths,Location,URL
 
-    {data}
+{data}
 
 > NOTE: The `{data}` placeholder is required — it gets replaced with the scraped HTML content.
 
