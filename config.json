@@ -1,0 +1,23 @@
+{
+  "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+  "USERNAME": "",
+  "PASSWORD": "",
+  "LOGIN_URL": "",
+  "USERNAME_FIELD": "username",
+  "PASSWORD_FIELD": "password",
+  "JS_WAIT_SELECTOR": "div.dynamic-section", 
+  "RETRY_COUNT": 3,
+  "MAX_PAGES": 3,
+  "LISTING_SELECTORS": [
+    "div[class*='card']",
+    "article",
+    "li[class*='listing']",
+    ".tm-property-search-card"
+  ],
+  "llm": {
+    "model_type": "OpenAI",
+    "openai_model_name": "gpt-4o-mini",
+    "ollama_model_name": "llama3",
+    "ollama_api_url": "http://localhost:11434"
+  }
+}
