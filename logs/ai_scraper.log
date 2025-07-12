@@ -2278,3 +2278,247 @@ Call log:
 2025-07-13 11:43:57,506 | DEBUG | Loaded backend tkagg version 8.6.
 2025-07-13 11:44:11,549 | DEBUG | close.started
 2025-07-13 11:44:11,549 | DEBUG | close.complete
+2025-07-13 11:54:30,171 | DEBUG | Using proactor: IocpProactor
+2025-07-13 11:54:30,236 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-13 11:54:30,522 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-13 11:54:30,790 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-13 11:54:30,797 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-13 11:54:30,799 | DEBUG | interactive is False
+2025-07-13 11:54:30,799 | DEBUG | platform is win32
+2025-07-13 11:54:30,863 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021BD915C790>
+2025-07-13 11:54:30,864 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000021BD772D2E0> server_hostname='api.gradio.app' timeout=3
+2025-07-13 11:54:30,869 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-13 11:54:30,871 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-13 11:54:30,900 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-13 11:54:31,209 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021BD8E7CD10>
+2025-07-13 11:54:31,209 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-13 11:54:31,210 | DEBUG | send_request_headers.complete
+2025-07-13 11:54:31,210 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-13 11:54:31,212 | DEBUG | send_request_body.complete
+2025-07-13 11:54:31,212 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-13 11:54:31,398 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sat, 12 Jul 2025 23:58:04 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-13 11:54:31,414 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-13 11:54:31,414 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-13 11:54:31,415 | DEBUG | receive_response_body.complete
+2025-07-13 11:54:31,429 | DEBUG | response_closed.started
+2025-07-13 11:54:31,429 | DEBUG | response_closed.complete
+2025-07-13 11:54:31,432 | DEBUG | close.started
+2025-07-13 11:54:31,433 | DEBUG | close.complete
+2025-07-13 11:54:31,463 | DEBUG | Using proactor: IocpProactor
+2025-07-13 11:54:31,780 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-13 11:54:31,781 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021BD78546D0>
+2025-07-13 11:54:31,781 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-13 11:54:31,781 | DEBUG | send_request_headers.complete
+2025-07-13 11:54:31,781 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-13 11:54:31,781 | DEBUG | send_request_body.complete
+2025-07-13 11:54:31,781 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-13 11:54:31,782 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Sat, 12 Jul 2025 23:54:31 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-13 11:54:31,783 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-13 11:54:31,783 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-13 11:54:31,783 | DEBUG | receive_response_body.complete
+2025-07-13 11:54:31,783 | DEBUG | response_closed.started
+2025-07-13 11:54:31,783 | DEBUG | response_closed.complete
+2025-07-13 11:54:31,783 | DEBUG | close.started
+2025-07-13 11:54:31,784 | DEBUG | close.complete
+2025-07-13 11:54:31,785 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-13 11:54:31,785 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021BD78C5C50>
+2025-07-13 11:54:31,785 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-13 11:54:31,786 | DEBUG | send_request_headers.complete
+2025-07-13 11:54:31,786 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-13 11:54:31,787 | DEBUG | send_request_body.complete
+2025-07-13 11:54:31,787 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-13 11:54:31,803 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Sat, 12 Jul 2025 23:54:31 GMT'), (b'server', b'uvicorn'), (b'content-length', b'44433'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-13 11:54:31,803 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-13 11:54:31,803 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-13 11:54:31,804 | DEBUG | receive_response_body.complete
+2025-07-13 11:54:31,804 | DEBUG | response_closed.started
+2025-07-13 11:54:31,804 | DEBUG | response_closed.complete
+2025-07-13 11:54:31,804 | DEBUG | close.started
+2025-07-13 11:54:31,804 | DEBUG | close.complete
+2025-07-13 11:54:31,808 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-13 11:54:32,354 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-13 11:55:04,897 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-13 11:55:04,897 | DEBUG | Loaded backend agg version v2.2.
+2025-07-13 11:55:04,899 | DEBUG | Using proactor: IocpProactor
+2025-07-13 11:55:06,180 | INFO | No LOGIN_URL provided, skipping login.
+2025-07-13 11:55:24,365 | WARNING | Timeout waiting for JS content: div.dynamic-section
+2025-07-13 11:55:27,011 | DEBUG | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-a9e9d4ec-3bf1-4e53-8813-ae8e9494b3d3', 'json_data': {'messages': [{'content': 'Below is a list of property listing descriptions.\n\nExtract the following fields from each:\n- Title (or address)\n- Price (sale or rent)\n- Number of Bedrooms\n- Number of Bathrooms\n- Location\n- Listing URL (if available)\n\nFormat the result as a CSV table with the following columns:\nTitle,Price,Beds,Baths,Location,URL\n\nGet to know City Centre | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As of Jun-25, medium-sized houses (3-4 bedrooms) in City Centre are listed for $1,210,500 on average, a change of 3% compared to the previous three months. Year on year, the average listing price for medium-sized homes in City Centre has actually decreased by 17%, up from a value of $1,463,300. | Meanwhile, the average sales price for small houses (1-2 bedrooms) in City Centre is $431,150. This represents a change of 2% versus the last three months ($438,900). Compared to last year, small properties in City Centre have seen a 1% fall from $435,500. | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As o... | Show all | More about this data\nWant more insights? | Research suburbs and browse sold property details.\nTrack your home¡¯s value | Get fortnightly updates when your HomesEstimate is refreshed.\nRecent sales nearby | Sold Jul 2025 | $1,269,000 | 2 | 2 | 1306/10 Commerce Street, Auckland Central, Auckland | Annie Xu | Sold May 2025 | $490,000 | 1 | 1 | 3Y/15 Nelson Street, Auckland Central, Auckland | Rainbow Zhong | Sold Apr 2025 | $315,000 | 1 | 1 | 10B/32 Eden Crescent, Auckland Central, Auckland | Bharti Patel | View more\nPrivate listing | Direct Sale ¨C No Agents, Talk to the Owner! | City Centre, Auckland City | 2 | 1 | Asking price $350,000', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2025-07-13 11:55:27,034 | DEBUG | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-07-13 11:55:27,034 | DEBUG | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-07-13 11:55:27,080 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021BDC17D310>
+2025-07-13 11:55:27,080 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000021BDD9DAF90> server_hostname='api.openai.com' timeout=None
+2025-07-13 11:55:27,088 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000021BDC0E3150>
+2025-07-13 11:55:27,088 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-07-13 11:55:27,088 | DEBUG | send_request_headers.complete
+2025-07-13 11:55:27,088 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-07-13 11:55:27,089 | DEBUG | send_request_body.complete
+2025-07-13 11:55:27,089 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-07-13 11:55:27,299 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Sat, 12 Jul 2025 23:59:00 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'267'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_9aa998e45df40f869f9a677841da1bd9'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=54v4KNqbkzvEIrwCIZXrGP38RxA4DajN8LcP8PWzRgo-1752364740-1.0.1.1-M8H6.UDZhrr4vVGKEfsOSrZEU_WgaUw.mwoGLzdVPWL2X_MkSn3dCGNxJvG2uT15ng02ngDJ3ATmB5PLZLFYk5qq7_vV6V1TrU8SR3b87b0; path=/; expires=Sun, 13-Jul-25 00:29:00 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=_3_x.5fegUq8aMnt_ASBl2MAsf8hZXXbog8TwVik4wk-1752364740325-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95e47de9ba0150c2-AKL'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-13 11:55:27,299 | INFO | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-13 11:55:27,300 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-07-13 11:55:27,300 | DEBUG | receive_response_body.complete
+2025-07-13 11:55:27,301 | DEBUG | response_closed.started
+2025-07-13 11:55:27,301 | DEBUG | response_closed.complete
+2025-07-13 11:55:27,301 | DEBUG | HTTP Response: POST https://api.openai.com/v1/chat/completions "401 Unauthorized" Headers([('date', 'Sat, 12 Jul 2025 23:59:00 GMT'), ('content-type', 'application/json; charset=utf-8'), ('content-length', '267'), ('connection', 'keep-alive'), ('vary', 'Origin'), ('x-request-id', 'req_9aa998e45df40f869f9a677841da1bd9'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=54v4KNqbkzvEIrwCIZXrGP38RxA4DajN8LcP8PWzRgo-1752364740-1.0.1.1-M8H6.UDZhrr4vVGKEfsOSrZEU_WgaUw.mwoGLzdVPWL2X_MkSn3dCGNxJvG2uT15ng02ngDJ3ATmB5PLZLFYk5qq7_vV6V1TrU8SR3b87b0; path=/; expires=Sun, 13-Jul-25 00:29:00 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=_3_x.5fegUq8aMnt_ASBl2MAsf8hZXXbog8TwVik4wk-1752364740325-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '95e47de9ba0150c2-AKL'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-07-13 11:55:27,301 | DEBUG | request_id: req_9aa998e45df40f869f9a677841da1bd9
+2025-07-13 11:55:27,301 | DEBUG | Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1017, in request
+    response.raise_for_status()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-07-13 11:55:27,305 | DEBUG | Not retrying
+2025-07-13 11:55:27,305 | DEBUG | Re-raising status error
+2025-07-13 11:55:27,307 | WARNING | LLM attempt 1 failed: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ${OPENAI*****KEY}. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-07-13 11:55:28,310 | DEBUG | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-0754c5e1-2942-42a6-933f-465c1480180a', 'json_data': {'messages': [{'content': 'Below is a list of property listing descriptions.\n\nExtract the following fields from each:\n- Title (or address)\n- Price (sale or rent)\n- Number of Bedrooms\n- Number of Bathrooms\n- Location\n- Listing URL (if available)\n\nFormat the result as a CSV table with the following columns:\nTitle,Price,Beds,Baths,Location,URL\n\nGet to know City Centre | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As of Jun-25, medium-sized houses (3-4 bedrooms) in City Centre are listed for $1,210,500 on average, a change of 3% compared to the previous three months. Year on year, the average listing price for medium-sized homes in City Centre has actually decreased by 17%, up from a value of $1,463,300. | Meanwhile, the average sales price for small houses (1-2 bedrooms) in City Centre is $431,150. This represents a change of 2% versus the last three months ($438,900). Compared to last year, small properties in City Centre have seen a 1% fall from $435,500. | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As o... | Show all | More about this data\nWant more insights? | Research suburbs and browse sold property details.\nTrack your home¡¯s value | Get fortnightly updates when your HomesEstimate is refreshed.\nRecent sales nearby | Sold Jul 2025 | $1,269,000 | 2 | 2 | 1306/10 Commerce Street, Auckland Central, Auckland | Annie Xu | Sold May 2025 | $490,000 | 1 | 1 | 3Y/15 Nelson Street, Auckland Central, Auckland | Rainbow Zhong | Sold Apr 2025 | $315,000 | 1 | 1 | 10B/32 Eden Crescent, Auckland Central, Auckland | Bharti Patel | View more\nPrivate listing | Direct Sale ¨C No Agents, Talk to the Owner! | City Centre, Auckland City | 2 | 1 | Asking price $350,000', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2025-07-13 11:55:28,312 | DEBUG | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-07-13 11:55:28,312 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-07-13 11:55:28,313 | DEBUG | send_request_headers.complete
+2025-07-13 11:55:28,313 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-07-13 11:55:28,313 | DEBUG | send_request_body.complete
+2025-07-13 11:55:28,314 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-07-13 11:55:28,513 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Sat, 12 Jul 2025 23:59:01 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'267'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_f0adc5e58e171f4160557daa987fccb5'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95e47df168c750c2-AKL'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-13 11:55:28,514 | INFO | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-13 11:55:28,515 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-07-13 11:55:28,515 | DEBUG | receive_response_body.complete
+2025-07-13 11:55:28,515 | DEBUG | response_closed.started
+2025-07-13 11:55:28,515 | DEBUG | response_closed.complete
+2025-07-13 11:55:28,515 | DEBUG | HTTP Response: POST https://api.openai.com/v1/chat/completions "401 Unauthorized" Headers({'date': 'Sat, 12 Jul 2025 23:59:01 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '267', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_f0adc5e58e171f4160557daa987fccb5', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '95e47df168c750c2-AKL', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-07-13 11:55:28,516 | DEBUG | request_id: req_f0adc5e58e171f4160557daa987fccb5
+2025-07-13 11:55:28,516 | DEBUG | Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1017, in request
+    response.raise_for_status()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-07-13 11:55:28,518 | DEBUG | Not retrying
+2025-07-13 11:55:28,519 | DEBUG | Re-raising status error
+2025-07-13 11:55:28,520 | WARNING | LLM attempt 2 failed: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ${OPENAI*****KEY}. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-07-13 11:55:29,526 | DEBUG | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-d7bc453b-4554-4ad6-994b-917a43120953', 'json_data': {'messages': [{'content': 'Below is a list of property listing descriptions.\n\nExtract the following fields from each:\n- Title (or address)\n- Price (sale or rent)\n- Number of Bedrooms\n- Number of Bathrooms\n- Location\n- Listing URL (if available)\n\nFormat the result as a CSV table with the following columns:\nTitle,Price,Beds,Baths,Location,URL\n\nGet to know City Centre | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As of Jun-25, medium-sized houses (3-4 bedrooms) in City Centre are listed for $1,210,500 on average, a change of 3% compared to the previous three months. Year on year, the average listing price for medium-sized homes in City Centre has actually decreased by 17%, up from a value of $1,463,300. | Meanwhile, the average sales price for small houses (1-2 bedrooms) in City Centre is $431,150. This represents a change of 2% versus the last three months ($438,900). Compared to last year, small properties in City Centre have seen a 1% fall from $435,500. | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As o... | Show all | More about this data\nWant more insights? | Research suburbs and browse sold property details.\nTrack your home¡¯s value | Get fortnightly updates when your HomesEstimate is refreshed.\nRecent sales nearby | Sold Jul 2025 | $1,269,000 | 2 | 2 | 1306/10 Commerce Street, Auckland Central, Auckland | Annie Xu | Sold May 2025 | $490,000 | 1 | 1 | 3Y/15 Nelson Street, Auckland Central, Auckland | Rainbow Zhong | Sold Apr 2025 | $315,000 | 1 | 1 | 10B/32 Eden Crescent, Auckland Central, Auckland | Bharti Patel | View more\nPrivate listing | Direct Sale ¨C No Agents, Talk to the Owner! | City Centre, Auckland City | 2 | 1 | Asking price $350,000', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2025-07-13 11:55:29,528 | DEBUG | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-07-13 11:55:29,528 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-07-13 11:55:29,529 | DEBUG | send_request_headers.complete
+2025-07-13 11:55:29,529 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-07-13 11:55:29,529 | DEBUG | send_request_body.complete
+2025-07-13 11:55:29,531 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-07-13 11:55:29,745 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 401, b'Unauthorized', [(b'Date', b'Sat, 12 Jul 2025 23:59:02 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'267'), (b'Connection', b'keep-alive'), (b'vary', b'Origin'), (b'x-request-id', b'req_3b204bc13818ed005dc659d263d0e064'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'X-Content-Type-Options', b'nosniff'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95e47df90f8850c2-AKL'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-13 11:55:29,746 | INFO | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-13 11:55:29,746 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-07-13 11:55:29,747 | DEBUG | receive_response_body.complete
+2025-07-13 11:55:29,747 | DEBUG | response_closed.started
+2025-07-13 11:55:29,747 | DEBUG | response_closed.complete
+2025-07-13 11:55:29,747 | DEBUG | HTTP Response: POST https://api.openai.com/v1/chat/completions "401 Unauthorized" Headers({'date': 'Sat, 12 Jul 2025 23:59:02 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '267', 'connection': 'keep-alive', 'vary': 'Origin', 'x-request-id': 'req_3b204bc13818ed005dc659d263d0e064', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'x-content-type-options': 'nosniff', 'server': 'cloudflare', 'cf-ray': '95e47df90f8850c2-AKL', 'alt-svc': 'h3=":443"; ma=86400'})
+2025-07-13 11:55:29,747 | DEBUG | request_id: req_3b204bc13818ed005dc659d263d0e064
+2025-07-13 11:55:29,747 | DEBUG | Encountered httpx.HTTPStatusError
+Traceback (most recent call last):
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\openai\_base_client.py", line 1017, in request
+    response.raise_for_status()
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\httpx\_models.py", line 829, in raise_for_status
+    raise HTTPStatusError(message, request=request, response=self)
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+2025-07-13 11:55:29,748 | DEBUG | Not retrying
+2025-07-13 11:55:29,749 | DEBUG | Re-raising status error
+2025-07-13 11:55:29,749 | WARNING | LLM attempt 3 failed: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ${OPENAI*****KEY}. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-07-13 11:55:30,749 | ERROR | Scraper error
+Traceback (most recent call last):
+  File "C:\Users\Admin\Desktop\AITraining\AIAgentProject\chatcrawler\main.py", line 100, in run_scraper_live
+    raise RuntimeError(f"LLM failed after {retries} retries: {error}")
+RuntimeError: LLM failed after 3 retries: Error code: 401 - {'error': {'message': 'Incorrect API key provided: ${OPENAI*****KEY}. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-07-13 11:55:30,758 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-13 11:55:30,759 | DEBUG | Loaded backend agg version v2.2.
+2025-07-13 11:55:30,760 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-13 11:56:18,604 | DEBUG | close.started
+2025-07-13 11:56:18,605 | DEBUG | close.complete
+2025-07-13 11:56:29,375 | DEBUG | Using proactor: IocpProactor
+2025-07-13 11:56:29,421 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-13 11:56:29,749 | DEBUG | connect_tcp.started host='api.gradio.app' port=443 local_address=None timeout=3 socket_options=None
+2025-07-13 11:56:30,001 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026E6292AC90>
+2025-07-13 11:56:30,001 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000026E611E1250> server_hostname='api.gradio.app' timeout=3
+2025-07-13 11:56:30,019 | DEBUG | matplotlib data path: C:\Users\Admin\AppData\Local\Programs\Python\Python311\Lib\site-packages\matplotlib\mpl-data
+2025-07-13 11:56:30,027 | DEBUG | CONFIGDIR=C:\Users\Admin\.matplotlib
+2025-07-13 11:56:30,028 | DEBUG | interactive is False
+2025-07-13 11:56:30,029 | DEBUG | platform is win32
+2025-07-13 11:56:30,098 | DEBUG | CACHEDIR=C:\Users\Admin\.matplotlib
+2025-07-13 11:56:30,100 | DEBUG | Using fontManager instance from C:\Users\Admin\.matplotlib\fontlist-v390.json
+2025-07-13 11:56:30,128 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/initiated HTTP/1.1" 200 0
+2025-07-13 11:56:30,300 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026E63587A50>
+2025-07-13 11:56:30,301 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-13 11:56:30,301 | DEBUG | send_request_headers.complete
+2025-07-13 11:56:30,301 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-13 11:56:30,301 | DEBUG | send_request_body.complete
+2025-07-13 11:56:30,301 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-13 11:56:30,474 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 13 Jul 2025 00:00:03 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'21'), (b'Connection', b'keep-alive'), (b'Server', b'nginx/1.18.0'), (b'Access-Control-Allow-Origin', b'*')])
+2025-07-13 11:56:30,490 | INFO | HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-07-13 11:56:30,490 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-13 11:56:30,491 | DEBUG | receive_response_body.complete
+2025-07-13 11:56:30,491 | DEBUG | response_closed.started
+2025-07-13 11:56:30,491 | DEBUG | response_closed.complete
+2025-07-13 11:56:30,491 | DEBUG | close.started
+2025-07-13 11:56:30,506 | DEBUG | close.complete
+2025-07-13 11:56:30,699 | DEBUG | Using proactor: IocpProactor
+2025-07-13 11:56:31,023 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=None socket_options=None
+2025-07-13 11:56:31,024 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026E61309210>
+2025-07-13 11:56:31,024 | DEBUG | send_request_headers.started request=<Request [b'GET']>
+2025-07-13 11:56:31,025 | DEBUG | send_request_headers.complete
+2025-07-13 11:56:31,025 | DEBUG | send_request_body.started request=<Request [b'GET']>
+2025-07-13 11:56:31,025 | DEBUG | send_request_body.complete
+2025-07-13 11:56:31,025 | DEBUG | receive_response_headers.started request=<Request [b'GET']>
+2025-07-13 11:56:31,026 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Sat, 12 Jul 2025 23:56:30 GMT'), (b'server', b'uvicorn'), (b'content-length', b'4'), (b'content-type', b'application/json')])
+2025-07-13 11:56:31,027 | INFO | HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-07-13 11:56:31,027 | DEBUG | receive_response_body.started request=<Request [b'GET']>
+2025-07-13 11:56:31,027 | DEBUG | receive_response_body.complete
+2025-07-13 11:56:31,027 | DEBUG | response_closed.started
+2025-07-13 11:56:31,027 | DEBUG | response_closed.complete
+2025-07-13 11:56:31,027 | DEBUG | close.started
+2025-07-13 11:56:31,027 | DEBUG | close.complete
+2025-07-13 11:56:31,028 | DEBUG | connect_tcp.started host='127.0.0.1' port=7860 local_address=None timeout=3 socket_options=None
+2025-07-13 11:56:31,029 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026E61392150>
+2025-07-13 11:56:31,029 | DEBUG | send_request_headers.started request=<Request [b'HEAD']>
+2025-07-13 11:56:31,030 | DEBUG | send_request_headers.complete
+2025-07-13 11:56:31,030 | DEBUG | send_request_body.started request=<Request [b'HEAD']>
+2025-07-13 11:56:31,030 | DEBUG | send_request_body.complete
+2025-07-13 11:56:31,030 | DEBUG | receive_response_headers.started request=<Request [b'HEAD']>
+2025-07-13 11:56:31,046 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'date', b'Sat, 12 Jul 2025 23:56:30 GMT'), (b'server', b'uvicorn'), (b'content-length', b'44727'), (b'content-type', b'text/html; charset=utf-8')])
+2025-07-13 11:56:31,047 | INFO | HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-07-13 11:56:31,047 | DEBUG | receive_response_body.started request=<Request [b'HEAD']>
+2025-07-13 11:56:31,048 | DEBUG | receive_response_body.complete
+2025-07-13 11:56:31,048 | DEBUG | response_closed.started
+2025-07-13 11:56:31,048 | DEBUG | response_closed.complete
+2025-07-13 11:56:31,048 | DEBUG | close.started
+2025-07-13 11:56:31,048 | DEBUG | close.complete
+2025-07-13 11:56:31,051 | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2025-07-13 11:56:31,604 | DEBUG | https://huggingface.co:443 "HEAD /api/telemetry/gradio/launched HTTP/1.1" 200 0
+2025-07-13 11:56:53,803 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-13 11:56:53,803 | DEBUG | Loaded backend agg version v2.2.
+2025-07-13 11:56:53,805 | DEBUG | Using proactor: IocpProactor
+2025-07-13 11:56:55,308 | INFO | No LOGIN_URL provided, skipping login.
+2025-07-13 11:57:12,633 | WARNING | Timeout waiting for JS content: div.dynamic-section
+2025-07-13 11:57:15,239 | DEBUG | Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-73107965-0ea2-4501-838e-d1f16b7769b6', 'json_data': {'messages': [{'content': 'Below is a list of property listing descriptions.\n\nExtract the following fields from each:\n- Title (or address)\n- Price (sale or rent)\n- Number of Bedrooms\n- Number of Bathrooms\n- Location\n- Listing URL (if available)\n\nFormat the result as a CSV table with the following columns:\nTitle,Price,Beds,Baths,Location,URL\n\nGet to know City Centre | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As of Jun-25, medium-sized houses (3-4 bedrooms) in City Centre are listed for $1,210,500 on average, a change of 3% compared to the previous three months. Year on year, the average listing price for medium-sized homes in City Centre has actually decreased by 17%, up from a value of $1,463,300. | Meanwhile, the average sales price for small houses (1-2 bedrooms) in City Centre is $431,150. This represents a change of 2% versus the last three months ($438,900). Compared to last year, small properties in City Centre have seen a 1% fall from $435,500. | City Centre is located in Auckland. Each month, Trade Me helps hundreds of people find, buy and sell homes in Auckland, with many of those in City Centre. | As o... | Show all | More about this data\nWant more insights? | Research suburbs and browse sold property details.\nTrack your home¡¯s value | Get fortnightly updates when your HomesEstimate is refreshed.\nRecent sales nearby | Sold Jul 2025 | $1,269,000 | 2 | 2 | 1306/10 Commerce Street, Auckland Central, Auckland | Annie Xu | Sold May 2025 | $490,000 | 1 | 1 | 3Y/15 Nelson Street, Auckland Central, Auckland | Rainbow Zhong | Sold Apr 2025 | $315,000 | 1 | 1 | 10B/32 Eden Crescent, Auckland Central, Auckland | Bharti Patel | View more\nDeMaio Vilela & \nAlastair Kain | The Studio That Has What Others Don¡¯t | City Centre, Auckland City | 1 | 1 | 1 | Asking price $439,000', 'role': 'user'}], 'model': 'gpt-4o-mini', 'stream': False, 'temperature': 0.0}}
+2025-07-13 11:57:15,263 | DEBUG | Sending HTTP Request: POST https://api.openai.com/v1/chat/completions
+2025-07-13 11:57:15,264 | DEBUG | connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=None socket_options=None
+2025-07-13 11:57:15,288 | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026E65C3E890>
+2025-07-13 11:57:15,288 | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x0000026E65AC10A0> server_hostname='api.openai.com' timeout=None
+2025-07-13 11:57:15,300 | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000026E65BB7C10>
+2025-07-13 11:57:15,300 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2025-07-13 11:57:15,301 | DEBUG | send_request_headers.complete
+2025-07-13 11:57:15,301 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2025-07-13 11:57:15,301 | DEBUG | send_request_body.complete
+2025-07-13 11:57:15,301 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2025-07-13 11:57:17,263 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Sun, 13 Jul 2025 00:00:50 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-expose-headers', b'X-Request-ID'), (b'openai-organization', b'user-tnjpviqxybklvyhygs429u6c'), (b'openai-processing-ms', b'1303'), (b'openai-version', b'2020-10-01'), (b'x-envoy-upstream-service-time', b'1307'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'200000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'199525'), (b'x-ratelimit-reset-requests', b'8.64s'), (b'x-ratelimit-reset-tokens', b'142ms'), (b'x-request-id', b'req_7dea6b0c067d0b08a6b3de5edf4bc8f2'), (b'strict-transport-security', b'max-age=31536000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=4oQ5mNkMPDXXKSs56gEizQpsXoETfevi.GWJfFP3Xbc-1752364850-1.0.1.1-T7v1_hrpvlei_Y9P1JZ6qd57t6bk_taykmCltFsxYgw4jcJgvLvKVq5hgu6OjEeL.FEHSqXQOzigNzGbvaRBUPlSnoRCWzpjyB94Y4WDq2k; path=/; expires=Sun, 13-Jul-25 00:30:50 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'X-Content-Type-Options', b'nosniff'), (b'Set-Cookie', b'_cfuvid=zbehcJdDuN64DlAQcyL3OzCxd1Uc.m8ShCXiZgTSews-1752364850289-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'95e4808e1f5ed9ab-AKL'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-07-13 11:57:17,264 | INFO | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-13 11:57:17,265 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2025-07-13 11:57:17,266 | DEBUG | receive_response_body.complete
+2025-07-13 11:57:17,266 | DEBUG | response_closed.started
+2025-07-13 11:57:17,266 | DEBUG | response_closed.complete
+2025-07-13 11:57:17,266 | DEBUG | HTTP Response: POST https://api.openai.com/v1/chat/completions "200 OK" Headers([('date', 'Sun, 13 Jul 2025 00:00:50 GMT'), ('content-type', 'application/json'), ('transfer-encoding', 'chunked'), ('connection', 'keep-alive'), ('access-control-expose-headers', 'X-Request-ID'), ('openai-organization', 'user-tnjpviqxybklvyhygs429u6c'), ('openai-processing-ms', '1303'), ('openai-version', '2020-10-01'), ('x-envoy-upstream-service-time', '1307'), ('x-ratelimit-limit-requests', '10000'), ('x-ratelimit-limit-tokens', '200000'), ('x-ratelimit-remaining-requests', '9999'), ('x-ratelimit-remaining-tokens', '199525'), ('x-ratelimit-reset-requests', '8.64s'), ('x-ratelimit-reset-tokens', '142ms'), ('x-request-id', 'req_7dea6b0c067d0b08a6b3de5edf4bc8f2'), ('strict-transport-security', 'max-age=31536000; includeSubDomains; preload'), ('cf-cache-status', 'DYNAMIC'), ('set-cookie', '__cf_bm=4oQ5mNkMPDXXKSs56gEizQpsXoETfevi.GWJfFP3Xbc-1752364850-1.0.1.1-T7v1_hrpvlei_Y9P1JZ6qd57t6bk_taykmCltFsxYgw4jcJgvLvKVq5hgu6OjEeL.FEHSqXQOzigNzGbvaRBUPlSnoRCWzpjyB94Y4WDq2k; path=/; expires=Sun, 13-Jul-25 00:30:50 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('x-content-type-options', 'nosniff'), ('set-cookie', '_cfuvid=zbehcJdDuN64DlAQcyL3OzCxd1Uc.m8ShCXiZgTSews-1752364850289-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), ('server', 'cloudflare'), ('cf-ray', '95e4808e1f5ed9ab-AKL'), ('content-encoding', 'gzip'), ('alt-svc', 'h3=":443"; ma=86400')])
+2025-07-13 11:57:17,266 | DEBUG | request_id: req_7dea6b0c067d0b08a6b3de5edf4bc8f2
+2025-07-13 11:57:17,293 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-13 11:57:17,293 | DEBUG | Loaded backend agg version v2.2.
+2025-07-13 11:57:17,294 | DEBUG | Loaded backend tkagg version 8.6.
+2025-07-13 11:57:35,436 | DEBUG | close.started
+2025-07-13 11:57:35,436 | DEBUG | close.complete
