@@ -1,8 +1,8 @@
 {
   "OPENAI_API_KEY": "${OPENAI_API_KEY}",
-  "USERNAME": "",
-  "PASSWORD": "",
-  "LOGIN_URL": "",
+  "USERNAME": "${User_Name}",
+  "PASSWORD": "${Password}",
+  "LOGIN_URL": "${https://example.com/login}",
   "USERNAME_FIELD": "username",
   "PASSWORD_FIELD": "password",
   "JS_WAIT_SELECTOR": "div.dynamic-section", 
