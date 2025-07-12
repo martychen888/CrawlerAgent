@@ -12,7 +12,6 @@ def load_config():
 cfg = load_config()
 
 # Global values
-OPENAI_API_KEY = cfg.get("OPENAI_API_KEY", "")
 USERNAME = cfg.get("USERNAME", "")
 PASSWORD = cfg.get("PASSWORD", "")
 LOGIN_URL = cfg.get("LOGIN_URL", "")
@@ -34,6 +33,7 @@ LISTING_SELECTORS = cfg.get("LISTING_SELECTORS", [
 llm_cfg = cfg.get("llm", {})
 LLM_TYPE = llm_cfg.get("model_type", "OpenAI")
 MODEL_TYPE = llm_cfg.get("model_type", "OpenAI")
+OPENAI_API_KEY = llm_cfg.get("openai_api_key", "")
 OPENAI_MODEL = llm_cfg.get("openai_model_name", "gpt-4")
 OLLAMA_MODEL = llm_cfg.get("ollama_model_name", "llama3")
 OLLAMA_API_URL = llm_cfg.get("ollama_api_url", "http://localhost:11434")

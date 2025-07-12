@@ -35,8 +35,12 @@ def load_config():
     if os.path.exists(CONFIG_PATH):
         with open(CONFIG_PATH, "r", encoding="utf-8") as f:
             cfg = json.load(f)
-            if cfg.get("PASSWORD"):
-                cfg["PASSWORD"] = decrypt_password(cfg["PASSWORD"])
+            pw = cfg.get("PASSWORD", "")
+            if pw and not pw.lower().startswith("$") and len(pw) > 20:
+                try:
+                    cfg["PASSWORD"] = decrypt_password(pw)
+                except Exception:
+                    cfg["PASSWORD"] = ""
             return cfg
     return {}
 
@@ -132,6 +136,7 @@ def update_config(api_key, openai_model, ollama_model, ollama_url, login_url, us
         "OPENAI_API_KEY": api_key.strip(),
         "llm": {
             "model_type": model_type.strip(),
+            "openai_api_key": api_key.strip(),
             "openai_model_name": openai_model.strip(),
             "ollama_model_name": ollama_model.strip(),
             "ollama_api_url": ollama_url.strip(),

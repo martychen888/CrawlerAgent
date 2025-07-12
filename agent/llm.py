@@ -2,7 +2,6 @@ import requests
 from langchain.schema import HumanMessage
 from config import (
     LLM_TYPE,
-    OPENAI_API_KEY,
     OPENAI_MODEL,
     OLLAMA_MODEL,
     OLLAMA_API_URL,
@@ -33,7 +32,7 @@ class LLMHandler:
             return ChatOpenAI(
                 temperature=0,
                 model=OPENAI_MODEL,
-                openai_api_key=OPENAI_API_KEY
+                openai_api_key=cfg.get("llm", {}).get("openai_api_key", "")
             )
         elif self.llm_type == "ollama":
             from langchain_community.chat_models import ChatOllama
