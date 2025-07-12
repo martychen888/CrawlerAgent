@@ -64,8 +64,12 @@ def create_ui(cfg, run_scraper_live_fn, update_config_fn):
                 )
 
             with gr.Row(visible=True) as openai_row:
-                api_key_input = gr.Text(label="OpenAI API Key", value=cfg.get("OPENAI_API_KEY", ""), type="password")
-                model_input = gr.Text(label="OpenAI Model", value=cfg.get("llm", {}).get("openai_model_name", "gpt-4"))
+                api_key_input = gr.Text(label="OpenAI API Key", value=cfg.get("llm", {}).get("openai_api_key", ""), type="password")
+                model_input = gr.Dropdown(
+                    choices=["gpt-4", "gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"],
+                    value=cfg.get("llm", {}).get("openai_model_name", "gpt-4"),
+                    label="OpenAI Model"
+                )
 
             with gr.Row(visible=False) as ollama_row:
                 ollama_model_input = gr.Dropdown(
