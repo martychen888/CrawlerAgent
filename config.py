@@ -32,6 +32,7 @@ LISTING_SELECTORS = cfg.get("LISTING_SELECTORS", [
 
 # LLM Config
 llm_cfg = cfg.get("llm", {})
+LLM_TYPE = llm_cfg.get("model_type", "OpenAI")
 MODEL_TYPE = llm_cfg.get("model_type", "OpenAI")
 OPENAI_MODEL = llm_cfg.get("openai_model_name", "gpt-4")
 OLLAMA_MODEL = llm_cfg.get("ollama_model_name", "llama3")

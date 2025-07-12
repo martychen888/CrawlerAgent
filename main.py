@@ -2,6 +2,7 @@ import os
 import json
 from cryptography.fernet import Fernet
 import gradio as gr
+import io
 
 from scraper.web_scraper import WebScraper
 from agent.lang_processor import langchain_process
@@ -55,6 +56,7 @@ def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
     from logger import logger
     import os
     import csv
+    import re
 
     if not url or not url.startswith("http"):
         yield "❌ Invalid URL. Please enter a valid website starting with http/https.", "", [], None
@@ -86,14 +88,35 @@ def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
 
         log.append(f"📁 Output saved to {output_path}")
 
-        # Parse CSV to preview
-        rows = []
-        for line in ai_output.strip().splitlines():
-            if "," in line:
-                rows.append(line.split(","))
+        # Strip markdown-style CSV code block if present
+        ai_output = ai_output.strip()
+        if ai_output.startswith("```csv"):
+            ai_output = re.sub(r"^```csv\\s*", "", ai_output, flags=re.IGNORECASE)
+            ai_output = re.sub(r"```\\s*$", "", ai_output)
 
+        # Remove accidental double newlines or non-CSV preambles
+        lines = ai_output.splitlines()
+        csv_lines = [line for line in lines if "," in line or "Title" in line]
+        corrected_csv = "\n".join(csv_lines)
+
+        # Use csv.reader with fallback safety
+        rows = []
+        try:
+            csv_reader = csv.reader(io.StringIO(corrected_csv))
+            rows = [row for row in csv_reader if any(col.strip() for col in row)]
+        except Exception as e:
+            logger.warning(f"CSV parsing error: {e}")
+            rows = []
+
+        # Normalize all rows to match header length
         headers = rows[0] if rows else []
-        csv_data = rows[1:] if len(rows) > 1 else []
+        csv_data = []
+        for row in rows[1:]:
+            if len(row) < len(headers):
+                row += [""] * (len(headers) - len(row))  # pad short rows
+            elif len(row) > len(headers):
+                row = row[:len(headers)]  # trim long rows
+            csv_data.append(row)
 
         yield "\n".join(log), ai_output, csv_data, output_path
 
@@ -111,7 +134,9 @@ def update_config(api_key, openai_model, ollama_model, ollama_url, login_url, us
             "model_type": model_type.strip(),
             "openai_model_name": openai_model.strip(),
             "ollama_model_name": ollama_model.strip(),
-            "ollama_api_url": ollama_url.strip()
+            "ollama_api_url": ollama_url.strip(),
+            "deepseek_model_name": deepseek_model.strip(),
+            "deepseek_api_key": deepseek_api_key.strip()
         },
         "LOGIN_URL": login_url.strip(),
         "USERNAME": user.strip(),
