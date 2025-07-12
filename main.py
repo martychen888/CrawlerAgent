@@ -1,5 +1,6 @@
 import os
 import json
+import time
 from cryptography.fernet import Fernet
 import gradio as gr
 import io
@@ -72,7 +73,7 @@ def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
         scraper = WebScraper(engine=engine, headless=headless)
         scraper.login()
         html = scraper.get_html(url)
-        structure = scraper.extract_structure(html)
+        #structure = scraper.extract_structure(html)
         data = scraper.extract_data(html)
         scraper.close()
 
@@ -84,7 +85,20 @@ def run_scraper_live(url, prompt, engine, headless, retries, max_listings):
         log.append(f"✂️ Trimmed to {len(trimmed_data)} listings for LLM.")
         log.append("🧠 Analyzing listings with LLM...")
 
-        ai_output = langchain_process(trimmed_data, prompt)
+        ai_output = None
+        error = None
+        for attempt in range(retries):
+            try:
+                ai_output = langchain_process(trimmed_data, prompt)
+                break  # Success
+            except Exception as e:
+                error = e
+                logger.warning(f"LLM attempt {attempt + 1} failed: {e}")
+                time.sleep(1)
+
+        if ai_output is None:
+            raise RuntimeError(f"LLM failed after {retries} retries: {error}")
+
         output_path = "output/ai_output.csv"
         os.makedirs("output", exist_ok=True)
         with open(output_path, "w", encoding="utf-8") as f:
