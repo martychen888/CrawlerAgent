@@ -1,0 +1,26 @@
+{
+  "USERNAME": "${User_Name}",
+  "PASSWORD": "${Password}",
+  "LOGIN_URL": "",
+  "USERNAME_FIELD": "username",
+  "PASSWORD_FIELD": "password",
+  "JS_WAIT_SELECTOR": "div.dynamic-section", 
+  "RETRY_COUNT": 3,
+  "MAX_PAGES": 3,
+  "LISTING_SELECTORS": [
+    "div[class*='card']",
+    "article",
+    "li[class*='listing']",
+    ".tm-property-search-card"
+  ],
+  "llm": {
+    "model_type": "OpenAI",
+    "openai_api_key": "${OPENAI_API_KEY}",
+    "openai_model_name": "gpt-4o-mini",
+    "openai_model_choices": ["gpt-4", "gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"],
+    "ollama_model_name": "llama3",
+    "ollama_api_url": "http://localhost:11434",
+    "ollama_model_choices": ["llama3", "gemma", "mistral", "phi3"],
+    "deepseek_model_name": "deepseek-chat"
+  }
+}
