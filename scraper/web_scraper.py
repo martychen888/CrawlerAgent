@@ -1,14 +1,16 @@
 import os
 from bs4 import BeautifulSoup
-from scraper.strategies import get_strategy
+from scraper.strategy_base import ScrapingStrategyFactory
+from scraper.strategies import get_factory
 from logger import logger
 from config import LISTING_SELECTORS
 
 class WebScraper:
-    def __init__(self, engine="requests", headless=True):
-        self.engine_name = engine
-        self.headless = headless
-        self.strategy = get_strategy(engine, headless)
+    def __init__(self, engine=None, headless=True, factory: ScrapingStrategyFactory = None):
+        if factory:
+            self.strategy = factory.create()
+        else:
+            self.strategy = get_factory(engine, headless).create()
 
     def login(self):
         self.strategy.login()

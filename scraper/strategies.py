@@ -1,4 +1,3 @@
-
 import os
 import time
 import pickle
@@ -8,7 +7,6 @@ from fake_useragent import UserAgent
 from bs4 import BeautifulSoup
 import requests
 
-# Selenium imports
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -16,12 +14,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-
-# Playwright imports
 from playwright.sync_api import sync_playwright
 
-class RequestsStrategy:
+from scraper.strategy_base import ScrapingStrategy, ScrapingStrategyFactory
+
+class RequestsStrategy(ScrapingStrategy):
     COOKIE_PATH = "output/cookies/requests_session.pkl"
+
     def __init__(self):
         self.session = requests.Session()
         self.session.headers.update({"User-Agent": UserAgent().random})
@@ -39,8 +38,8 @@ class RequestsStrategy:
             pickle.dump(self.session.cookies, f)
 
     def login(self):
-        if not LOGIN_URL:
-            logger.info('No LOGIN_URL provided, skipping login.')
+        if not LOGIN_URL or LOGIN_URL.startswith("${"):
+            logger.info('No valid LOGIN_URL provided, skipping login.')
             return
         data = {USERNAME_FIELD: USERNAME, PASSWORD_FIELD: PASSWORD}
         r = self.session.post(LOGIN_URL, data=data, allow_redirects=True)
@@ -55,8 +54,14 @@ class RequestsStrategy:
         r.raise_for_status()
         return r.text
 
+    def close(self):
+        pass
 
-class SeleniumStrategy:
+class RequestsStrategyFactory(ScrapingStrategyFactory):
+    def create(self) -> ScrapingStrategy:
+        return RequestsStrategy()
+
+class SeleniumStrategy(ScrapingStrategy):
     COOKIE_PATH = "output/cookies/selenium_cookies.pkl"
 
     def __init__(self, headless=True):
@@ -83,8 +88,8 @@ class SeleniumStrategy:
             logger.info("Selenium cookies loaded.")
 
     def login(self):
-        if not LOGIN_URL:
-            logger.info('No LOGIN_URL provided, skipping login.')
+        if not LOGIN_URL or LOGIN_URL.startswith("${"):
+            logger.info('No valid LOGIN_URL provided, skipping login.')
             return
         self.driver.get(LOGIN_URL)
         self._auto_fill_field(USERNAME_FIELD, USERNAME)
@@ -118,11 +123,17 @@ class SeleniumStrategy:
             logger.warning(f"Timeout waiting for JS content: {JS_WAIT_SELECTOR}")
         return self.driver.page_source
 
-    def quit(self):
+    def close(self):
         self.driver.quit()
 
+class SeleniumStrategyFactory(ScrapingStrategyFactory):
+    def __init__(self, headless=True):
+        self.headless = headless
 
-class PlaywrightStrategy:
+    def create(self) -> ScrapingStrategy:
+        return SeleniumStrategy(headless=self.headless)
+
+class PlaywrightStrategy(ScrapingStrategy):
     STORAGE_STATE = "output/cookies/playwright_state.json"
 
     def __init__(self, headless=True):
@@ -139,8 +150,8 @@ class PlaywrightStrategy:
             self.page = self.context.new_page()
 
     def login(self):
-        if not LOGIN_URL:
-            logger.info('No LOGIN_URL provided, skipping login.')
+        if not LOGIN_URL or LOGIN_URL.startswith("${"):
+            logger.info('No valid LOGIN_URL provided, skipping login.')
             return
         if os.path.exists(self.STORAGE_STATE):
             logger.info("Playwright login skipped, storage state exists.")
@@ -166,15 +177,20 @@ class PlaywrightStrategy:
         self.browser.close()
         self.playwright.stop()
 
+class PlaywrightStrategyFactory(ScrapingStrategyFactory):
+    def __init__(self, headless=True):
+        self.headless = headless
 
-def get_strategy(engine, headless=True):
+    def create(self) -> ScrapingStrategy:
+        return PlaywrightStrategy(headless=self.headless)
+
+
+def get_factory(engine, headless=True) -> ScrapingStrategyFactory:
     if engine == "requests":
-        return RequestsStrategy()
+        return RequestsStrategyFactory()
     elif engine == "selenium":
-        return SeleniumStrategy(headless=headless)
+        return SeleniumStrategyFactory(headless=headless)
     elif engine == "playwright":
-        return PlaywrightStrategy(headless=headless)
+        return PlaywrightStrategyFactory(headless=headless)
     else:
         raise ValueError(f"Unknown scraping engine: {engine}")
-        
-
