@@ -1,4 +1,5 @@
 import json
+from dotenv import load_dotenv
 import os
 
 CONFIG_PATH = "config.json"
@@ -12,8 +13,10 @@ def load_config():
 cfg = load_config()
 
 # Global values
-USERNAME = cfg.get("USERNAME", "")
-PASSWORD = cfg.get("PASSWORD", "")
+# USERNAME = cfg.get("USERNAME", "")
+# PASSWORD = cfg.get("PASSWORD", "")
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
 LOGIN_URL = cfg.get("LOGIN_URL", "")
 USERNAME_FIELD = cfg.get("USERNAME_FIELD", "username")
 PASSWORD_FIELD = cfg.get("PASSWORD_FIELD", "password")
@@ -33,7 +36,8 @@ LISTING_SELECTORS = cfg.get("LISTING_SELECTORS", [
 llm_cfg = cfg.get("llm", {})
 LLM_TYPE = llm_cfg.get("model_type", "OpenAI")
 MODEL_TYPE = llm_cfg.get("model_type", "OpenAI")
-OPENAI_API_KEY = llm_cfg.get("openai_api_key", "")
+#OPENAI_API_KEY = llm_cfg.get("openai_api_key", "")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = llm_cfg.get("openai_model_name", "gpt-4")
 OLLAMA_MODEL = llm_cfg.get("ollama_model_name", "llama3")
 OLLAMA_API_URL = llm_cfg.get("ollama_api_url", "http://localhost:11434")
