@@ -159,3 +159,8 @@ After scraping and AI processing:
 Extract each property's Title, Price, Location, Bedrooms, and Listing URL. Output as a CSV:
 
 {data}
+
+🧪 Unit Test
+==========
+
+Python -m pytest
