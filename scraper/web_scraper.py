@@ -1,6 +1,6 @@
 import os
 from bs4 import BeautifulSoup
-from scraper.strategy_base import ScrapingStrategyFactory
+from scraper.strategies.base import ScrapingStrategyFactory
 from scraper.strategies import get_factory
 from logger import logger
 from config import LISTING_SELECTORS

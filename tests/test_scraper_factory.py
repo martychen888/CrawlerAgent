@@ -1,5 +1,5 @@
 import pytest
-from scraper.strategy_base import ScrapingStrategy, ScrapingStrategyFactory
+from scraper.strategies.base import ScrapingStrategy, ScrapingStrategyFactory
 from scraper.web_scraper import WebScraper
 
 class MockStrategy(ScrapingStrategy):

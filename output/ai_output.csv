@@ -2,10 +2,10 @@ Here is the extracted information formatted as a CSV table:
 
 ```csv
 Title,Price,Beds,Baths,Location,URL
-"1306/10 Commerce Street, Auckland Central, Auckland","$1,269,000","2","2","Auckland",""
-"3Y/15 Nelson Street, Auckland Central, Auckland","$490,000","1","1","Auckland",""
-"10B/32 Eden Crescent, Auckland Central, Auckland","$315,000","1","1","Auckland",""
-"Modern City Living with Iconic Views","$438,000","1","1","City Centre, Auckland City",""
+"1306/10 Commerce Street, Auckland Central, Auckland","$1,269,000","2","2","Auckland Central, Auckland",""
+"3Y/15 Nelson Street, Auckland Central, Auckland","$490,000","1","1","Auckland Central, Auckland",""
+"10B/32 Eden Crescent, Auckland Central, Auckland","$315,000","1","1","Auckland Central, Auckland",""
+"Revived & Resized. Now bigger than ever by Uni","$409,000","1","1","City Centre, Auckland City",""
 ```
 
-Note: The URLs were not provided in the descriptions, so they are left blank.
+Note: The URLs were not provided in the original descriptions, so they are left blank.
